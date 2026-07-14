@@ -5,7 +5,8 @@ import Card from '../components/ds/Card';
 import StatCard from '../components/ds/StatCard';
 import HeroNumber from '../components/ds/HeroNumber';
 import ReportSlideMobile from '../components/ReportSlideMobile';
-import { saveOrShareImage } from '../lib/downloadImage';
+import ImagePreviewModal from '../components/ImagePreviewModal';
+import { downloadImage, isIOS } from '../lib/downloadImage';
 
 function BarRow({ row }) {
   return (
@@ -32,6 +33,7 @@ export default function View3Dashboard({ cuido }) {
 
   const reportRef = useRef(null);
   const [exportStatus, setExportStatus] = useState('idle');
+  const [previewUrl, setPreviewUrl] = useState(null);
 
   const handleDownload = async () => {
     if (!reportRef.current) return;
@@ -43,8 +45,12 @@ export default function View3Dashboard({ cuido }) {
         toPng(reportRef.current, { pixelRatio: 3, cacheBust: true, skipFonts: true }),
         timeout,
       ]);
-      const safeName = (state.name || 'resultado').trim().toLowerCase().replace(/\s+/g, '-');
-      await saveOrShareImage(dataUrl, `cuido-${safeName}.png`);
+      if (isIOS()) {
+        setPreviewUrl(dataUrl);
+      } else {
+        const safeName = (state.name || 'resultado').trim().toLowerCase().replace(/\s+/g, '-');
+        downloadImage(dataUrl, `cuido-${safeName}.png`);
+      }
       setExportStatus('idle');
     } catch (e) {
       if (e.name === 'AbortError') {
@@ -210,6 +216,10 @@ export default function View3Dashboard({ cuido }) {
           <Button variant="ghost" onClick={reset} style={{ height: 44 }}>Reiniciar ejercicio</Button>
         </div>
       </div>
+
+      {previewUrl && (
+        <ImagePreviewModal src={previewUrl} onClose={() => setPreviewUrl(null)} />
+      )}
     </>
   );
 }

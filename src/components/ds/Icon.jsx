@@ -20,6 +20,7 @@ import {
   Shirt,
   ShoppingBag,
   TriangleAlert,
+  X,
 } from 'lucide-react';
 
 const ICONS = {
@@ -44,6 +45,7 @@ const ICONS = {
   Shirt,
   ShoppingBag,
   TriangleAlert,
+  X,
 };
 
 export default function Icon({ n, s = 22, color = 'currentColor', style = {} }) {
