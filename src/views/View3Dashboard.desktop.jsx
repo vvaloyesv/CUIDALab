@@ -5,6 +5,7 @@ import Card from '../components/ds/Card';
 import StatCard from '../components/ds/StatCard';
 import HeroNumber from '../components/ds/HeroNumber';
 import ReportSlide from '../components/ReportSlide';
+import { saveOrShareImage } from '../lib/downloadImage';
 
 function BarRow({ row }) {
   return (
@@ -23,7 +24,7 @@ function BarRow({ row }) {
 export default function View3DashboardDesktop({ cuido }) {
   const {
     state, grossRows, grossDisplay, netDisplay, pctCareDisplay, pctWorkDisplay,
-    comparisonRows, hasOverlap, overlapDisplay, hasDoubleJornada, doubleJornadaDisplay,
+    comparisonRows, hasOverlap, overlapDisplay, hasAnyOverlap, anyOverlapDisplay, overlapPairs,
     monthlyHoursDisplay, annualHoursDisplay, simileText, monthlyDisplay, annualDisplay,
     userName, todayDisplay, workHoursDisplay, slideGrossRows, slideComparisonRows, jornadaInsight,
     backToV1, reset,
@@ -42,13 +43,14 @@ export default function View3DashboardDesktop({ cuido }) {
         toPng(reportRef.current, { pixelRatio: 3, cacheBust: true, skipFonts: true }),
         timeout,
       ]);
-      const link = document.createElement('a');
       const safeName = (state.name || 'resultado').trim().toLowerCase().replace(/\s+/g, '-');
-      link.download = `cuido-${safeName}.png`;
-      link.href = dataUrl;
-      link.click();
+      await saveOrShareImage(dataUrl, `cuido-${safeName}.png`);
       setExportStatus('idle');
     } catch (e) {
+      if (e.name === 'AbortError') {
+        setExportStatus('idle');
+        return;
+      }
       console.error('No se pudo generar la imagen del reporte:', e);
       setExportStatus('error');
     }
@@ -112,13 +114,21 @@ export default function View3DashboardDesktop({ cuido }) {
 
           <Card tone="sunken" padding="md" style={{ flex: 1 }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              {hasOverlap ? (
+              {hasAnyOverlap ? (
                 <>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <Icon n="GitMerge" s={17} />
-                    <span style={{ font: 'var(--type-label)', color: 'var(--ink-800)' }}>{overlapDisplay} de cuidado ocurrió al mismo tiempo que otra actividad</span>
+                    <span style={{ font: 'var(--type-label)', color: 'var(--ink-800)' }}>{anyOverlapDisplay} de cuidado ocurrió al mismo tiempo que otra actividad</span>
                   </div>
-                  <p style={{ font: 'var(--type-body-sm)', color: 'var(--text-muted)', margin: 0 }}>Una misma hora puede contener más de una tarea de cuidado. Cocinar, acompañar o hacer compras suelen suceder al mismo tiempo. Por eso, algunas horas se cuentan más de una vez.</p>
+                  <p style={{ font: 'var(--type-body-sm)', color: 'var(--text-muted)', margin: 0 }}>Una misma hora puede contener más de una tarea. Cocinar, acompañar, hacer compras o trabajar suelen suceder al mismo tiempo. Por eso, algunas horas se cuentan más de una vez.</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 4 }}>
+                    {overlapPairs.map((p) => (
+                      <div key={p.aLabel + p.bLabel} style={{ display: 'flex', justifyContent: 'space-between', gap: 8 }}>
+                        <span style={{ font: 'var(--type-body-sm)', fontSize: 'var(--text-xs)', color: 'var(--ink-700)' }}>{p.aLabel} + {p.bLabel}</span>
+                        <span style={{ font: 'var(--type-label)', fontSize: 'var(--text-xs)', color: 'var(--ink-800)' }}>{p.display}</span>
+                      </div>
+                    ))}
+                  </div>
                 </>
               ) : (
                 <>
@@ -128,25 +138,6 @@ export default function View3DashboardDesktop({ cuido }) {
                   </div>
                   <p style={{ font: 'var(--type-body-sm)', color: 'var(--text-muted)', margin: 0 }}>Cada hora de cuidado tuvo tu atención completa, una por una — y aun así suman {netDisplay}.</p>
                 </>
-              )}
-            </div>
-          </Card>
-
-          <Card padding="md" style={{ flex: 1 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-              <span style={{ width: 44, height: 44, borderRadius: '50%', background: 'var(--ink-200)', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto' }}>
-                <Icon n="Layers" s={20} />
-              </span>
-              {hasDoubleJornada ? (
-                <div>
-                  <div style={{ font: 'var(--type-label)', color: 'var(--ink-800)' }}>Doble jornada</div>
-                  <div style={{ font: 'var(--type-body-sm)', color: 'var(--text-muted)' }}>{doubleJornadaDisplay} cuidaste y trabajaste al mismo tiempo. Dos jornadas, un solo cuerpo.</div>
-                </div>
-              ) : (
-                <div>
-                  <div style={{ font: 'var(--type-label)', color: 'var(--ink-800)' }}>Sin doble jornada hoy</div>
-                  <div style={{ font: 'var(--type-body-sm)', color: 'var(--text-muted)' }}>Tu trabajo remunerado y tu cuidado no se cruzaron — pero {grossDisplay} de cuidado siguen sin estar en ninguna nómina.</div>
-                </div>
               )}
             </div>
           </Card>
