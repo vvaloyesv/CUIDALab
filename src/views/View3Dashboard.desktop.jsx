@@ -24,7 +24,7 @@ function BarRow({ row }) {
 export default function View3DashboardDesktop({ cuido }) {
   const {
     state, grossRows, grossDisplay, netDisplay, pctCareDisplay, pctWorkDisplay,
-    comparisonRows, hasOverlap, overlapDisplay, hasAnyOverlap, anyOverlapDisplay, overlapPairs,
+    comparisonRows, hasOverlap, overlapDisplay, hasAnyOverlap, anyOverlapDisplay,
     monthlyHoursDisplay, annualHoursDisplay, simileText, monthlyDisplay, annualDisplay,
     userName, todayDisplay, workHoursDisplay, slideGrossRows, slideComparisonRows,
     backToV1, reset,
@@ -120,14 +120,6 @@ export default function View3DashboardDesktop({ cuido }) {
                     <span style={{ font: 'var(--type-label)', color: 'var(--ink-800)' }}>{anyOverlapDisplay} de cuidado ocurrió al mismo tiempo que otra actividad</span>
                   </div>
                   <p style={{ font: 'var(--type-body-sm)', color: 'var(--text-muted)', margin: 0 }}>Una misma hora puede contener más de una tarea. Cocinar, acompañar, hacer compras o trabajar suelen suceder al mismo tiempo. Por eso, algunas horas se cuentan más de una vez.</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 4 }}>
-                    {overlapPairs.map((p) => (
-                      <div key={p.aLabel + p.bLabel} style={{ display: 'flex', justifyContent: 'space-between', gap: 8 }}>
-                        <span style={{ font: 'var(--type-body-sm)', fontSize: 'var(--text-xs)', color: 'var(--ink-700)' }}>{p.aLabel} + {p.bLabel}</span>
-                        <span style={{ font: 'var(--type-label)', fontSize: 'var(--text-xs)', color: 'var(--ink-800)' }}>{p.display}</span>
-                      </div>
-                    ))}
-                  </div>
                 </>
               ) : (
                 <>

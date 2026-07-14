@@ -201,27 +201,13 @@ export function useCuido() {
     const trabajoSet = new Set(state.matrix[TRABAJO.key] || []);
     const doubleJornada = [...unionSet].filter((h) => trabajoSet.has(h)).length;
 
-    // Detalle personalizado de solapamiento: por cada par de actividades marcadas
-    // (incluye trabajo), cuántas horas comparten. Reemplaza el "doble jornada"
-    // como número aislado, que contradecía a este total al medir cosas distintas.
-    const overlapPairs = [];
+    // Horas donde 2+ actividades marcadas (incluye trabajo) coinciden — el total
+    // que respalda el mensaje de solapamiento, sin desglose por par de actividad.
     let anyOverlapHours = 0;
     for (let h = 0; h < 24; h++) {
       const activeAtHour = seq.filter((c) => (state.matrix[c.key] || []).includes(h));
       if (activeAtHour.length >= 2) anyOverlapHours++;
     }
-    for (let i = 0; i < seq.length; i++) {
-      for (let j = i + 1; j < seq.length; j++) {
-        const a = seq[i];
-        const b = seq[j];
-        const aHours = new Set(state.matrix[a.key] || []);
-        const shared = (state.matrix[b.key] || []).filter((h) => aHours.has(h)).length;
-        if (shared > 0) {
-          overlapPairs.push({ aLabel: a.label, bLabel: b.label, hours: shared, display: fmtHours(shared) });
-        }
-      }
-    }
-    overlapPairs.sort((a, b) => b.hours - a.hours);
 
     const monthly = netHours * RATE_HOUR * 30;
     const annual = netHours * RATE_HOUR * 360;
@@ -282,7 +268,6 @@ export function useCuido() {
       comparisonRows,
       hasOverlap: overlapHours > 0,
       hasDoubleJornada: doubleJornada > 0,
-      overlapPairs,
       anyOverlapHours,
       anyOverlapDisplay: fmtHours(anyOverlapHours),
       hasAnyOverlap: anyOverlapHours > 0,

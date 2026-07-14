@@ -102,9 +102,10 @@ export default function ReportSlide({
         <p style={{ margin: '6px 0 0', fontSize: 17, color: 'var(--ink-700)', maxWidth: 900 }}>Un trabajo esencial que sostiene la vida, aunque pocas veces se reconoce.</p>
       </div>
 
-      {/* fila de 4 stat cards */}
+      {/* fila de 5 stat cards */}
       <div style={{ position: 'relative', display: 'flex', gap: 16, marginTop: 24 }}>
         <StatCard icon="Clock" iconBg="var(--lime-300)" label="Tiempo total en el que cuidas" value={grossDisplay} />
+        <StatCard icon="Clock" iconBg="var(--mint)" label="Tiempo neto en el que cuidas" value={netDisplay} />
         <StatCard icon="Heart" iconBg="var(--lavender-strong)" label="Del día, dedicas al cuidado" value={pctCareDisplay} />
         <StatCard icon="Clock" iconBg="var(--ink-300)" label="Horas de trabajo remunerado" value={workHoursDisplay} />
         <StatCard icon="Briefcase" iconBg="var(--peach)" label="Del día, dedicas al trabajo remunerado" value={pctWorkDisplay} />

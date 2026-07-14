@@ -4,7 +4,7 @@ import Button from '../components/ds/Button';
 import Card from '../components/ds/Card';
 import StatCard from '../components/ds/StatCard';
 import HeroNumber from '../components/ds/HeroNumber';
-import ReportSlide from '../components/ReportSlide';
+import ReportSlideMobile from '../components/ReportSlideMobile';
 import { saveOrShareImage } from '../lib/downloadImage';
 
 function BarRow({ row }) {
@@ -24,7 +24,7 @@ function BarRow({ row }) {
 export default function View3Dashboard({ cuido }) {
   const {
     state, grossRows, grossDisplay, netDisplay, pctCareDisplay, pctWorkDisplay,
-    comparisonRows, hasOverlap, overlapDisplay, hasAnyOverlap, anyOverlapDisplay, overlapPairs,
+    comparisonRows, hasAnyOverlap, anyOverlapDisplay,
     monthlyHoursDisplay, annualHoursDisplay, simileText, monthlyDisplay, annualDisplay,
     userName, todayDisplay, workHoursDisplay, slideGrossRows, slideComparisonRows,
     backToV1, reset,
@@ -60,7 +60,7 @@ export default function View3Dashboard({ cuido }) {
     <>
       <div style={{ position: 'fixed', top: 0, left: -100000, pointerEvents: 'none' }} aria-hidden="true">
         <div ref={reportRef}>
-          <ReportSlide
+          <ReportSlideMobile
             userName={userName}
             todayDisplay={todayDisplay}
             netDisplay={netDisplay}
@@ -70,8 +70,8 @@ export default function View3Dashboard({ cuido }) {
             workHoursDisplay={workHoursDisplay}
             slideGrossRows={slideGrossRows}
             slideComparisonRows={slideComparisonRows}
-            hasOverlap={hasOverlap}
-            overlapDisplay={overlapDisplay}
+            hasAnyOverlap={hasAnyOverlap}
+            anyOverlapDisplay={anyOverlapDisplay}
             monthlyDisplay={monthlyDisplay}
             annualDisplay={annualDisplay}
             monthlyHoursDisplay={monthlyHoursDisplay}
@@ -131,14 +131,6 @@ export default function View3Dashboard({ cuido }) {
                   <span style={{ font: 'var(--type-label)', color: 'var(--ink-800)' }}>{anyOverlapDisplay} de cuidado ocurrió al mismo tiempo que otra actividad</span>
                 </div>
                 <p style={{ font: 'var(--type-body-sm)', color: 'var(--text-muted)', margin: 0 }}>Una misma hora puede contener más de una tarea. Cocinar, acompañar, hacer compras o trabajar suelen suceder al mismo tiempo. Por eso, algunas horas se cuentan más de una vez.</p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 4 }}>
-                  {overlapPairs.map((p) => (
-                    <div key={p.aLabel + p.bLabel} style={{ display: 'flex', justifyContent: 'space-between', gap: 8 }}>
-                      <span style={{ font: 'var(--type-body-sm)', fontSize: 'var(--text-xs)', color: 'var(--ink-700)' }}>{p.aLabel} + {p.bLabel}</span>
-                      <span style={{ font: 'var(--type-label)', fontSize: 'var(--text-xs)', color: 'var(--ink-800)' }}>{p.display}</span>
-                    </div>
-                  ))}
-                </div>
               </>
             ) : (
               <>
