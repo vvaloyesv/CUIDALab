@@ -26,7 +26,7 @@ export default function View3DashboardDesktop({ cuido }) {
     state, grossRows, grossDisplay, netDisplay, pctCareDisplay, pctWorkDisplay,
     comparisonRows, hasOverlap, overlapDisplay, hasAnyOverlap, anyOverlapDisplay, overlapPairs,
     monthlyHoursDisplay, annualHoursDisplay, simileText, monthlyDisplay, annualDisplay,
-    userName, todayDisplay, workHoursDisplay, slideGrossRows, slideComparisonRows, jornadaInsight,
+    userName, todayDisplay, workHoursDisplay, slideGrossRows, slideComparisonRows,
     backToV1, reset,
   } = cuido;
 
@@ -72,7 +72,6 @@ export default function View3DashboardDesktop({ cuido }) {
             slideComparisonRows={slideComparisonRows}
             hasOverlap={hasOverlap}
             overlapDisplay={overlapDisplay}
-            jornadaInsight={jornadaInsight}
             monthlyDisplay={monthlyDisplay}
             annualDisplay={annualDisplay}
             monthlyHoursDisplay={monthlyHoursDisplay}

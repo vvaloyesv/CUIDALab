@@ -267,10 +267,6 @@ export function useCuido() {
     const overlapInsight = overlapHours > 0
       ? `${fmtHours(overlapHours)} de cuidado ocurrieron al mismo tiempo que otra actividad.`
       : 'Ninguna hora de cuidado se solapó con otra actividad.';
-    const jornadaInsight = doubleJornada > 0
-      ? `Doble jornada: ${fmtHours(doubleJornada)} cuidaste y trabajaste al mismo tiempo. Dos jornadas, un solo cuerpo.`
-      : 'Tu trabajo remunerado y tu cuidado no se cruzaron hoy.';
-
     return {
       seq, current, v1Disabled, nameMissing, target, placed,
       grossRows, grossTotal,
@@ -293,7 +289,7 @@ export function useCuido() {
       monthlyHoursDisplay: fmtHours(monthlyHours),
       annualHoursDisplay: fmtHours(annualHours),
       simileText,
-      userName, todayDisplay, workHoursDisplay, slideGrossRows, slideComparisonRows, overlapInsight, jornadaInsight,
+      userName, todayDisplay, workHoursDisplay, slideGrossRows, slideComparisonRows, overlapInsight,
     };
   }, [state, sequence, targetFor]);
 

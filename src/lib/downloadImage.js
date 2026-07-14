@@ -7,14 +7,20 @@ function dataUrlToFile(dataUrl, filename) {
   return new File([bytes], filename, { type: mime });
 }
 
+function isIOS() {
+  return /iP(hone|od|ad)/.test(navigator.platform)
+    || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+}
+
 /**
  * iOS Safari ignores the `download` attribute on <a>, so a synthetic click
- * there silently does nothing. Route through the native share sheet when
- * file sharing is supported, otherwise fall back to the classic anchor
- * download (Android/desktop browsers, where it already works).
+ * there silently does nothing. Route through the native share sheet only on
+ * iOS. Desktop Chrome/Edge (Windows) also implement canShare with files, but
+ * there it opens an OS share dialog instead of downloading — worse than the
+ * plain anchor download that already works there, so it must stay gated to iOS.
  */
 export async function saveOrShareImage(dataUrl, filename) {
-  if (navigator.canShare) {
+  if (isIOS() && navigator.canShare) {
     const file = dataUrlToFile(dataUrl, filename);
     if (navigator.canShare({ files: [file] })) {
       await navigator.share({ files: [file] });

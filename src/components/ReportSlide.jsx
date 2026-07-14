@@ -58,7 +58,7 @@ function StatCard({ icon, iconBg, label, value }) {
 export default function ReportSlide({
   userName, todayDisplay, netDisplay, grossDisplay, pctCareDisplay, pctWorkDisplay, workHoursDisplay,
   slideGrossRows, slideComparisonRows,
-  hasOverlap, overlapDisplay, jornadaInsight,
+  hasOverlap, overlapDisplay,
   monthlyDisplay, annualDisplay, monthlyHoursDisplay, annualHoursDisplay, simileText,
 }) {
   return (
@@ -131,7 +131,6 @@ export default function ReportSlide({
           ) : (
             <div style={{ fontSize: 14, color: 'var(--ink-600)', lineHeight: 1.35 }}>Ninguna hora de cuidado se solapó con otra actividad.</div>
           )}
-          <div style={{ fontSize: 13, color: 'var(--ink-600)', lineHeight: 1.35 }}>{jornadaInsight}</div>
         </div>
 
         <div style={{ flex: 0.85, minWidth: 0, background: 'var(--ink-800)', borderRadius: 18, padding: '22px 24px', display: 'flex', flexDirection: 'column', gap: 14, color: 'var(--lime-300)', overflow: 'hidden' }}>
