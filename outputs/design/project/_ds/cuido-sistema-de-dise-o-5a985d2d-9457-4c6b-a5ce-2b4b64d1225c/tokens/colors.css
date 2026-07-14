@@ -1,0 +1,83 @@
+/* ============================================================
+   Cuido — Color tokens
+   Amarillo-lima primario + neutros de tinta, pasteles de acento.
+   Base palette (raw) + semantic aliases.
+   ============================================================ */
+
+:root {
+  /* ---- Marca / Primario (amarillo-lima) ---- */
+  --lime-50:  #fdffe6;
+  --lime-100: #fcfeb8;
+  --lime-200: #fcfd9b;
+  --lime-300: #fcfd76; /* firma de marca */
+  --lime-400: #eef05a;
+  --lime-500: #d9db3f;
+  --lime-600: #b0b22c;
+
+  /* ---- Neutros / Tinta ---- */
+  --ink-950: #000000;
+  --ink-900: #121212;
+  --ink-800: #212121; /* tinta principal */
+  --ink-700: #333333;
+  --ink-600: #4a4a4a;
+  --ink-500: #6b6b6b;
+  --ink-400: #9a9a9a;
+  --ink-300: #c4c4c4;
+  --ink-200: #e2e2e2;
+  --ink-150: #ececec;
+  --ink-100: #f2f2f2;
+  --ink-50:  #f8f8f8;
+  --white:   #ffffff;
+
+  /* ---- Pasteles de acento ---- */
+  --lavender: #d7d7f4; /* lavanda */
+  --lavender-strong: #bb96da; /* púrpura */
+  --cyan:    #93dcdf; /* cian suave */
+  --peach:   #efaf86; /* durazno */
+  --mint:    #b9e6c8; /* verde menta (del moodboard) */
+  --sky:     #c7e6f2; /* azul cielo claro */
+
+  /* ---- Semánticos de estado ---- */
+  --success: #4f9d69;
+  --warning: #e0a53d;
+  --danger:  #d8654f;
+  --info:    #6b8fd8;
+
+  /* ============================================================
+     Aliases semánticos
+     ============================================================ */
+
+  /* Texto */
+  --text-strong:   var(--ink-800);
+  --text-body:     var(--ink-700);
+  --text-muted:    var(--ink-500);
+  --text-subtle:   var(--ink-400);
+  --text-inverse:  var(--white);
+  --text-on-lime:  var(--ink-800);
+
+  /* Superficies */
+  --surface-page:    var(--ink-100);
+  --surface-card:    var(--white);
+  --surface-sunken:  var(--ink-150);
+  --surface-inverse: var(--ink-800);
+  --surface-lime:    var(--lime-300);
+
+  /* Bordes */
+  --border-subtle:  var(--ink-200);
+  --border-default: var(--ink-300);
+  --border-strong:  var(--ink-800);
+
+  /* Acento primario (acciones) */
+  --accent:          var(--lime-300);
+  --accent-hover:    var(--lime-400);
+  --accent-pressed:  var(--lime-500);
+  --accent-contrast: var(--ink-800);
+
+  /* Foco */
+  --focus-ring: color-mix(in srgb, var(--ink-800) 55%, transparent);
+
+  /* Glass (frost) */
+  --glass-fill:   color-mix(in srgb, var(--white) 55%, transparent);
+  --glass-fill-dark: color-mix(in srgb, var(--ink-900) 42%, transparent);
+  --glass-border: color-mix(in srgb, var(--white) 65%, transparent);
+}

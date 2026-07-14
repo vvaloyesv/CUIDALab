@@ -1,0 +1,9 @@
+/* ============================================================
+   Cuido — Webfonts
+   Urbanist  → texto y display (Google Fonts)
+   Handjet   → titulares decorativos tipo matriz de puntos / LED
+   NOTA: cargados vía Google Fonts CDN. Si se requieren binarios
+   propios o licenciados, reemplazar por @font-face locales.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300..800;1,400..600&family=Handjet:wght@400;600;700&display=swap');

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/shadows.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/base.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/styles.css">
+  <script src="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/_ds_bundle.js"></script>
+  <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+  <script src="./icon-helper.js"></script>
+  <style>
+    body { margin: 0; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px;background:radial-gradient(120% 120% at 50% 0%, #efe9f6 0%, #e8e8ea 60%, #e2e2e6 100%);font-family:var(--font-sans);box-sizing:border-box">
+  <div style="position:relative;width:390px;height:800px;background:#000;border-radius:54px;padding:11px;box-shadow:var(--shadow-xl)">
+    <div style="position:relative;width:100%;height:100%;border-radius:44px;overflow:hidden;background:var(--surface-page)">
+      <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:118px;height:32px;background:#000;border-radius:20px;z-index:30"></div>
+
+      <sc-if value="{{isHome}}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;inset:0">
+          <x-import component-from-global-scope="CuidoHomeScreen" from="./HomeScreen.jsx" dc-props="{{ homeProps }}" hint-size="100%,100%"></x-import>
+        </div>
+      </sc-if>
+      <sc-if value="{{isRegistrar}}">
+        <div style="position:absolute;inset:0">
+          <x-import component-from-global-scope="CuidoRegistrarScreen" from="./RegistrarScreen.jsx" dc-props="{{ registrarProps }}" hint-size="100%,100%"></x-import>
+        </div>
+      </sc-if>
+      <sc-if value="{{isResumen}}">
+        <div style="position:absolute;inset:0">
+          <x-import component-from-global-scope="CuidoResumenScreen" from="./ResumenScreen.jsx" dc-props="{{ resumenProps }}" hint-size="100%,100%"></x-import>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{showNav}}">
+        <div style="position:absolute;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:space-around;padding:14px 26px 30px;background:linear-gradient(to top, rgba(255,255,255,0.94), rgba(255,255,255,0))">
+          <button onClick="{{ goHome }}" style="border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;color:{{ homeColor }};font-family:var(--font-sans);font-size:10px;font-weight:600">
+            <x-import component-from-global-scope="CuidoIcon" n="House" s="24" hint-size="24px,24px"></x-import>
+            Inicio
+          </button>
+          <button onClick="{{ goRegistrar }}" style="width:62px;height:62px;border-radius:50%;border:none;background:var(--lime-300);color:var(--ink-800);box-shadow:var(--shadow-lime);cursor:pointer;display:flex;align-items:center;justify-content:center;margin-top:-22px" aria-label="Registrar">
+            <x-import component-from-global-scope="CuidoIcon" n="Plus" s="28" hint-size="28px,28px"></x-import>
+          </button>
+          <button onClick="{{ goResumen }}" style="border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;color:{{ resumenColor }};font-family:var(--font-sans);font-size:10px;font-weight:600">
+            <x-import component-from-global-scope="CuidoIcon" n="ChartPie" s="24" hint-size="24px,24px"></x-import>
+            Tu valor
+          </button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { tab: 'home' };
+
+  renderVals() {
+    const tab = this.state.tab;
+    return {
+      isHome: tab === 'home',
+      isRegistrar: tab === 'registrar',
+      isResumen: tab === 'resumen',
+      showNav: tab !== 'registrar',
+      homeColor: tab === 'home' ? 'var(--ink-800)' : 'var(--ink-400)',
+      resumenColor: tab === 'resumen' ? 'var(--ink-800)' : 'var(--ink-400)',
+      goHome: () => this.setState({ tab: 'home' }),
+      goRegistrar: () => this.setState({ tab: 'registrar' }),
+      goResumen: () => this.setState({ tab: 'resumen' }),
+      Icon: window.CuidoIcon,
+      homeProps: { Icon: window.CuidoIcon, onOpenRegistrar: () => this.setState({ tab: 'registrar' }) },
+      registrarProps: { Icon: window.CuidoIcon, onDone: () => this.setState({ tab: 'resumen' }) },
+      resumenProps: { Icon: window.CuidoIcon },
+    };
+  }
+}
+</script>
+</body>
+</html>

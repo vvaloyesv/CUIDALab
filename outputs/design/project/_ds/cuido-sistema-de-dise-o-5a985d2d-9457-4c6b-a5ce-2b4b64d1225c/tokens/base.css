@@ -1,0 +1,41 @@
+/* ============================================================
+   Cuido — Base / reset ligero
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font: var(--type-body);
+  color: var(--text-body);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure { margin: 0; }
+
+a {
+  color: var(--ink-800);
+  text-decoration: none;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--ink-600); text-decoration: underline; }
+
+button { font-family: inherit; }
+
+::selection { background: var(--lime-300); color: var(--ink-800); }
+
+:focus-visible { outline: none; box-shadow: var(--ring-focus); }
+
+/* Utilidad: superficie de vidrio esmerilado */
+.cuido-glass {
+  background: var(--glass-fill);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-inset-glass), var(--shadow-md);
+}

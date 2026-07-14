@@ -1,0 +1,221 @@
+/* ============================================================
+   Cuido — Design tokens
+   Portado del sistema de diseño (Claude Design) para esta app.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300..800;1,400..600&family=Handjet:wght@400;600;700&display=swap');
+
+:root {
+  /* ---- Marca / Primario (amarillo-lima) ---- */
+  --lime-50:  #fdffe6;
+  --lime-100: #fcfeb8;
+  --lime-200: #fcfd9b;
+  --lime-300: #fcfd76;
+  --lime-400: #eef05a;
+  --lime-500: #d9db3f;
+  --lime-600: #b0b22c;
+
+  /* ---- Neutros / Tinta ---- */
+  --ink-950: #000000;
+  --ink-900: #121212;
+  --ink-800: #212121;
+  --ink-700: #333333;
+  --ink-600: #4a4a4a;
+  --ink-500: #6b6b6b;
+  --ink-400: #9a9a9a;
+  --ink-300: #c4c4c4;
+  --ink-200: #e2e2e2;
+  --ink-150: #ececec;
+  --ink-100: #f2f2f2;
+  --ink-50:  #f8f8f8;
+  --white:   #ffffff;
+
+  /* ---- Pasteles de acento ---- */
+  --lavender: #d7d7f4;
+  --lavender-strong: #bb96da;
+  --cyan:    #93dcdf;
+  --peach:   #efaf86;
+  --mint:    #b9e6c8;
+  --sky:     #c7e6f2;
+
+  /* ---- Semánticos de estado ---- */
+  --success: #4f9d69;
+  --warning: #e0a53d;
+  --danger:  #d8654f;
+  --info:    #6b8fd8;
+
+  /* Texto */
+  --text-strong:   var(--ink-800);
+  --text-body:     var(--ink-700);
+  --text-muted:    var(--ink-500);
+  --text-subtle:   var(--ink-400);
+  --text-inverse:  var(--white);
+  --text-on-lime:  var(--ink-800);
+
+  /* Superficies */
+  --surface-page:    var(--ink-100);
+  --surface-card:    var(--white);
+  --surface-sunken:  var(--ink-150);
+  --surface-inverse: var(--ink-800);
+  --surface-lime:    var(--lime-300);
+
+  /* Bordes */
+  --border-subtle:  var(--ink-200);
+  --border-default: var(--ink-300);
+  --border-strong:  var(--ink-800);
+
+  /* Acento primario (acciones) */
+  --accent:          var(--lime-300);
+  --accent-hover:    var(--lime-400);
+  --accent-pressed:  var(--lime-500);
+  --accent-contrast: var(--ink-800);
+
+  /* Foco */
+  --focus-ring: color-mix(in srgb, var(--ink-800) 55%, transparent);
+
+  /* Glass (frost) */
+  --glass-fill:   color-mix(in srgb, var(--white) 55%, transparent);
+  --glass-fill-dark: color-mix(in srgb, var(--ink-900) 42%, transparent);
+  --glass-border: color-mix(in srgb, var(--white) 65%, transparent);
+
+  /* ---- Tipografía ---- */
+  --font-sans:    'Urbanist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: 'Urbanist', ui-sans-serif, system-ui, sans-serif;
+  --font-dot:     'Handjet', 'Urbanist', monospace;
+
+  --text-3xs: 0.6875rem;
+  --text-2xs: 0.75rem;
+  --text-xs:  0.8125rem;
+  --text-sm:  0.875rem;
+  --text-md:  1rem;
+  --text-lg:  1.125rem;
+  --text-xl:  1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
+  --text-6xl: 5.5rem;
+
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --leading-tight:   1.05;
+  --leading-snug:    1.2;
+  --leading-normal:  1.45;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-wider:  0.14em;
+
+  --type-display:  var(--weight-medium) var(--text-6xl)/var(--leading-tight) var(--font-display);
+  --type-h1:       var(--weight-semibold) var(--text-4xl)/var(--leading-snug) var(--font-display);
+  --type-h2:       var(--weight-semibold) var(--text-3xl)/var(--leading-snug) var(--font-sans);
+  --type-h3:       var(--weight-semibold) var(--text-2xl)/var(--leading-snug) var(--font-sans);
+  --type-h4:       var(--weight-medium) var(--text-xl)/var(--leading-snug) var(--font-sans);
+  --type-body:     var(--weight-regular) var(--text-md)/var(--leading-normal) var(--font-sans);
+  --type-body-sm:  var(--weight-regular) var(--text-sm)/var(--leading-normal) var(--font-sans);
+  --type-label:    var(--weight-semibold) var(--text-xs)/var(--leading-snug) var(--font-sans);
+  --type-eyebrow:  var(--weight-semibold) var(--text-2xs)/var(--leading-snug) var(--font-sans);
+
+  /* ---- Espaciado (base 4px) ---- */
+  --space-0:  0;
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --container-sm:  480px;
+  --container-md:  768px;
+  --container-lg:  1120px;
+  --container-xl:  1360px;
+
+  --gap-inline:  var(--space-2);
+  --gap-stack:   var(--space-4);
+  --pad-card:    var(--space-6);
+  --pad-screen:  var(--space-5);
+
+  /* ---- Radios ---- */
+  --radius-xs:   6px;
+  --radius-sm:   10px;
+  --radius-md:   16px;
+  --radius-lg:   22px;
+  --radius-xl:   28px;
+  --radius-2xl:  36px;
+  --radius-pill: 999px;
+  --radius-full: 50%;
+
+  --radius-button: var(--radius-pill);
+  --radius-input:  var(--radius-pill);
+  --radius-card:   var(--radius-xl);
+  --radius-sheet:  var(--radius-2xl);
+  --radius-chip:   var(--radius-pill);
+
+  /* ---- Sombras ---- */
+  --shadow-none: none;
+  --shadow-xs:  0 1px 2px rgba(18, 18, 18, 0.06);
+  --shadow-sm:  0 2px 8px rgba(18, 18, 18, 0.06);
+  --shadow-md:  0 6px 20px rgba(18, 18, 18, 0.08);
+  --shadow-lg:  0 16px 40px rgba(18, 18, 18, 0.10);
+  --shadow-xl:  0 28px 70px rgba(18, 18, 18, 0.14);
+
+  --shadow-lime: 0 10px 30px rgba(217, 219, 63, 0.35);
+  --shadow-inset-glass: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  --ring-focus: 0 0 0 3px var(--focus-ring);
+
+  /* ---- Efectos ---- */
+  --blur-sm: 8px;
+  --blur-md: 18px;
+  --blur-lg: 32px;
+
+  --glass-blur:      saturate(140%) blur(var(--blur-md));
+  --glass-blur-soft: saturate(120%) blur(var(--blur-sm));
+
+  --grad-warm:      radial-gradient(120% 120% at 20% 15%, #efd9c2 0%, #e6c9e0 45%, #cfc6ef 100%);
+  --grad-aurora:    radial-gradient(100% 120% at 80% 0%, #d7d7f4 0%, #c7e6f2 40%, #b9e6c8 100%);
+  --grad-dusk:      linear-gradient(135deg, #bb96da 0%, #efaf86 100%);
+  --grad-lime:      linear-gradient(135deg, #fcfd76 0%, #eef05a 100%);
+  --grad-lime-soft: radial-gradient(120% 120% at 0% 0%, #fcfeb8 0%, #fcfd76 100%);
+  --grad-ink:       linear-gradient(160deg, #333333 0%, #121212 100%);
+
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --dur-fast: 140ms;
+  --dur-base: 240ms;
+  --dur-slow: 420ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font: var(--type-body);
+  color: var(--text-body);
+  background: var(--ink-150);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure { margin: 0; }
+
+button { font-family: inherit; }
+
+::selection { background: var(--lime-300); color: var(--ink-800); }
+
+:focus-visible { outline: none; box-shadow: var(--ring-focus); }

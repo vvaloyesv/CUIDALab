@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/radius.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/shadows.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/tokens/base.css">
+  <link rel="stylesheet" href="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/styles.css">
+  <script src="_ds/cuido-sistema-de-dise-o-5a985d2d-9457-4c6b-a5ce-2b4b64d1225c/_ds_bundle.js"></script>
+  <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+  <script src="./icon-helper.js"></script>
+  <script src="./image-slot.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    body { margin: 0; background: var(--surface-page); }
+    a { color: var(--lavender-strong); }
+    a:hover { color: var(--ink-800); }
+    @media print {
+      body { background: #fff; }
+      [data-print-hide] { display: none !important; }
+      [data-print-frame] { max-width: none !important; box-shadow: none !important; }
+    }
+  </style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;justify-content:center;background:var(--ink-150)">
+<div style="width:100%;max-width:560px;min-height:100vh;background:var(--surface-page);box-shadow:var(--shadow-md);position:relative;display:flex;flex-direction:column" data-print-frame>
+
+  <!-- ============ VISTA 0 — LOGIN ============ -->
+  <sc-if value="{{isV0}}">
+    <div style="position:relative;overflow:hidden;background:var(--grad-aurora);min-height:100vh;display:flex;flex-direction:column">
+      <span style="position:absolute;top:-60px;right:-50px;width:220px;height:220px;border-radius:50%;background:var(--lavender-strong);opacity:0.4;filter:blur(14px);pointer-events:none"></span>
+      <span style="position:absolute;top:180px;left:-60px;width:180px;height:180px;border-radius:50%;background:var(--mint);opacity:0.45;filter:blur(12px);pointer-events:none"></span>
+      <span style="position:absolute;bottom:-40px;right:40px;width:160px;height:160px;border-radius:50%;background:var(--lime-300);opacity:0.5;filter:blur(10px);pointer-events:none"></span>
+
+      <div style="position:relative;padding:48px 22px 8px;display:flex;flex-direction:column;gap:4px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:46px;height:46px;border-radius:50%;background:var(--ink-800);display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+            <svg width="27" height="27" viewBox="0 0 100 100" fill="none">
+              <path d="M50 30 m 0 -14 a 14 14 0 0 1 0 28 a 9 9 0 0 1 0 -18" stroke="var(--lime-300)" stroke-width="7" stroke-linecap="round" fill="none"></path>
+              <path d="M50 40 L50 58 M50 58 L32 84 M50 58 L50 88 M50 58 L68 84" stroke="var(--lime-300)" stroke-width="7" stroke-linecap="round" fill="none"></path>
+            </svg>
+          </span>
+          <span style="font:var(--type-eyebrow);text-transform:uppercase;letter-spacing:var(--tracking-wider);color:var(--ink-600)">Cuida</span>
+        </div>
+        <div style="font-family:'Handjet',monospace;font-weight:700;font-size:72px;line-height:0.95;letter-spacing:0.01em;color:var(--ink-800)">HOLA.</div>
+        <h1 style="font:var(--type-h1);font-size:var(--text-2xl);letter-spacing:var(--tracking-tight);color:var(--ink-800);margin:2px 0 0">Cuéntanos quién eres para empezar</h1>
+        <p style="font:var(--type-body);color:var(--ink-700);margin:4px 0 0;max-width:420px">Con esto podemos comparar tu día con los promedios nacionales de cuidado.</p>
+      </div>
+
+      <div style="position:relative;padding:24px 22px 48px;flex:1;display:flex;flex-direction:column">
+        <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.GlassCard" padding="lg" hint-size="100%,auto">
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font:var(--type-label);font-size:var(--text-sm);color:var(--ink-800)">Tu nombre</span>
+              <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Input" placeholder="¿Cómo te llamas?" value="{{ loginName }}" on-change="{{ onLoginNameChange }}" hint-size="100%,48px"></x-import>
+            </div>
+            <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Button" variant="primary" size="lg" disabled="{{ !loginValid }}" on-click="{{ submitLogin }}" hint-size="100%,54px">Comenzar</x-import>
+          </div>
+        </x-import>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ VISTA 1 — REGISTRO DE HORAS ============ -->
+  <sc-if value="{{isV1}}" hint-placeholder-val="{{ true }}">
+    <div style="position:relative;overflow:hidden;background:var(--grad-warm);padding:44px 22px 26px;display:flex;flex-direction:column;gap:14px">
+      <span style="position:absolute;top:-40px;right:-30px;width:150px;height:150px;border-radius:50%;background:var(--mint);opacity:0.55;filter:blur(6px);pointer-events:none"></span>
+      <span style="position:absolute;bottom:-50px;left:-40px;width:130px;height:130px;border-radius:50%;background:var(--lavender-strong);opacity:0.35;filter:blur(10px);pointer-events:none"></span>
+      <div style="position:relative;display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="width:34px;height:34px;border-radius:50%;background:var(--ink-800);display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+            <svg width="20" height="20" viewBox="0 0 100 100" fill="none">
+              <path d="M50 30 m 0 -14 a 14 14 0 0 1 0 28 a 9 9 0 0 1 0 -18" stroke="var(--lime-300)" stroke-width="9" stroke-linecap="round" fill="none"></path>
+              <path d="M50 40 L50 58 M50 58 L32 84 M50 58 L50 88 M50 58 L68 84" stroke="var(--lime-300)" stroke-width="9" stroke-linecap="round" fill="none"></path>
+            </svg>
+          </span>
+          <span style="font:var(--type-eyebrow);text-transform:uppercase;letter-spacing:var(--tracking-wider);color:var(--ink-600)">Cuida · Ejercicio personal</span>
+        </div>
+        <h1 style="font:var(--type-h1);font-size:var(--text-3xl);letter-spacing:var(--tracking-tight);color:var(--ink-800);margin:0">¿Cuánto cuidas sin que se cuente?</h1>
+        <p style="font:var(--type-body);color:var(--ink-700);margin:6px 0 0">Cuéntanos cuántas horas dedicas, en un día típico, a cada una de estas actividades. Al final verás tus horas totales y su valor económico estimado.</p>
+      </div>
+      <div style="position:relative;width:100%;height:190px;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-md)">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="banner-mujeres-cuidando" shape="rect" placeholder="Sube una foto o ilustración de mujeres cuidando" style="width:100%;height:100%" hint-size="100%,190px"></x-import>
+      </div>
+    </div>
+
+    <div style="padding:20px 22px 140px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;gap:10px;align-items:flex-start;background:var(--surface-sunken);border-radius:var(--radius-card);padding:14px 16px">
+        <x-import component-from-global-scope="CuidoIcon" n="Info" s="18" hint-size="18px,18px"></x-import>
+        <p style="font:var(--type-body-sm);font-size:var(--text-xs);color:var(--text-muted);margin:0">Este ejercicio es un punto de referencia para tu reflexión, no una medición exacta. No pedimos ni guardamos datos que te identifiquen.</p>
+      </div>
+
+      <span style="font:var(--type-label);color:var(--text-strong);margin-top:8px">En un día típico, ¿cuánto tiempo dedicas a…</span>
+
+      <sc-for list="{{catRows}}" as="item" hint-placeholder-count="7">
+        <div style="background:var(--surface-card);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:16px 18px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <span style="width:30px;height:30px;border-radius:50%;background:{{ item.color }};display:flex;align-items:center;justify-content:center;flex:0 0 auto;color:var(--ink-800)">
+              <x-import component-from-global-scope="CuidoIcon" n="{{ item.icon }}" s="15" hint-size="15px,15px"></x-import>
+            </span>
+            <span style="font:var(--type-label);font-size:var(--text-sm);color:var(--ink-800)">{{ item.label }}</span>
+          </div>
+          <sc-if value="{{ item.isWeekly }}">
+            <p style="font:var(--type-body-sm);font-size:var(--text-xs);color:var(--text-muted);margin:-6px 0 0">Cuéntanos tus horas en una semana típica.</p>
+          </sc-if>
+          <div style="display:flex;align-items:center;gap:8px">
+            <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.IconButton" variant="outline" size="sm" label="Restar una hora" disabled="{{ !item.canDecrement }}" on-click="{{ item.onDecrement }}" style="width:26px;height:26px" hint-size="26px,26px">
+              <x-import component-from-global-scope="CuidoIcon" n="Minus" s="13" hint-size="13px,13px"></x-import>
+            </x-import>
+            <div style="flex:1">
+              <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Slider" min="0" max="{{ item.max }}" step="1" value="{{ item.value }}" show-value="{{ true }}" format="{{ item.format }}" on-change="{{ item.onChange }}" hint-size="100%,50px"></x-import>
+            </div>
+            <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.IconButton" variant="outline" size="sm" label="Sumar una hora" disabled="{{ !item.canIncrement }}" on-click="{{ item.onIncrement }}" style="width:26px;height:26px" hint-size="26px,26px">
+              <x-import component-from-global-scope="CuidoIcon" n="Plus" s="13" hint-size="13px,13px"></x-import>
+            </x-import>
+          </div>
+        </div>
+      </sc-for>
+
+      <div style="height:1px;background:var(--border-subtle);margin:8px 0"></div>
+      <span style="font:var(--type-label);color:var(--text-strong)">Aparte, tu trabajo o negocio</span>
+      <p style="font:var(--type-body-sm);color:var(--text-muted);margin:-8px 0 0">No cuenta como cuidado, pero nos ayuda a mostrarte si se cruza con tu tiempo de cuidado.</p>
+      <div style="background:var(--surface-card);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:16px 18px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:30px;height:30px;border-radius:50%;background:{{ trabajoRow.color }};display:flex;align-items:center;justify-content:center;flex:0 0 auto;color:var(--ink-800)">
+            <x-import component-from-global-scope="CuidoIcon" n="{{ trabajoRow.icon }}" s="15" hint-size="15px,15px"></x-import>
+          </span>
+          <span style="font:var(--type-label);font-size:var(--text-sm);color:var(--ink-800)">{{ trabajoRow.label }}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.IconButton" variant="outline" size="sm" label="Restar una hora" disabled="{{ !trabajoRow.canDecrement }}" on-click="{{ trabajoRow.onDecrement }}" style="width:26px;height:26px" hint-size="26px,26px">
+            <x-import component-from-global-scope="CuidoIcon" n="Minus" s="13" hint-size="13px,13px"></x-import>
+          </x-import>
+          <div style="flex:1">
+            <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Slider" min="0" max="{{ trabajoRow.max }}" step="1" value="{{ trabajoRow.value }}" show-value="{{ true }}" format="{{ trabajoRow.format }}" on-change="{{ trabajoRow.onChange }}" hint-size="100%,50px"></x-import>
+          </div>
+          <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.IconButton" variant="outline" size="sm" label="Sumar una hora" disabled="{{ !trabajoRow.canIncrement }}" on-click="{{ trabajoRow.onIncrement }}" style="width:26px;height:26px" hint-size="26px,26px">
+            <x-import component-from-global-scope="CuidoIcon" n="Plus" s="13" hint-size="13px,13px"></x-import>
+          </x-import>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:sticky;bottom:0;padding:16px 22px 22px;background:linear-gradient(to top, var(--surface-page) 70%, transparent);display:flex;flex-direction:column;gap:8px">
+      <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Button" full-width="{{ true }}" size="lg" disabled="{{ v1Disabled }}" on-click="{{ startMatrix }}" hint-size="100%,54px">Continuar</x-import>
+    </div>
+  </sc-if>
+
+  <!-- ============ VISTA 2 — MATRIZ DE SOLAPAMIENTO ============ -->
+  <sc-if value="{{isV2}}">
+    <div style="padding:44px 22px 8px;display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <button onClick="{{ backToV1 }}" style="border:none;background:var(--surface-card);width:38px;height:38px;border-radius:50%;box-shadow:var(--shadow-sm);cursor:pointer;display:flex;align-items:center;justify-content:center">
+          <x-import component-from-global-scope="CuidoIcon" n="ArrowLeft" s="18" hint-size="18px,18px"></x-import>
+        </button>
+        <span style="font:var(--type-body-sm);font-size:var(--text-xs);color:var(--text-muted)">Actividad {{ activityStep }} de {{ activityTotal }}</span>
+      </div>
+      <p style="font:var(--type-body-sm);font-size:var(--text-xs);color:var(--ink-600);margin:0">Hola {{ userName }}</p>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:4px">
+        <span style="width:44px;height:44px;border-radius:50%;background:{{ currentColor }};display:flex;align-items:center;justify-content:center;flex:0 0 auto;color:var(--ink-800)">
+          <x-import component-from-global-scope="CuidoIcon" n="{{ currentIcon }}" s="21" hint-size="21px,21px"></x-import>
+        </span>
+        <div>
+          <div style="font:var(--type-h3)  ;color:var(--ink-800)">{{ currentLabel }}</div>
+          <div style="font:var(--type-body-sm);font-size:var(--text-xs);color:var(--text-muted)">Llevas {{ placed }} de {{ target }} horas ubicadas</div>
+        </div>
+      </div>
+      <p style="font:var(--type-body-sm);color:var(--text-muted);margin:2px 0 0">Marca en qué horas del día hiciste esta actividad. Si una hora ya está ocupada por otra actividad, aún puedes marcarla — así vemos cuándo se cruzan.</p>
+    </div>
+
+    <div style="padding:6px 22px 140px;display:flex;flex-direction:column;gap:16px">
+
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px">
+        <sc-for list="{{ hourCells }}" as="cell" hint-placeholder-count="24">
+          <button onClick="{{ cell.onClick }}" title="{{ cell.fullRangeLabel }}" style="aspect-ratio:1;border:{{ cell.border }};border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font:var(--type-label);font-size:9px;line-height:1.3;background:{{ cell.background }};color:{{ cell.color }};opacity:{{ cell.opacity }};cursor:{{ cell.cursorStyle }}">{{ cell.hourShort }}</button>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ hasLimitMsg }}">
+        <div style="display:flex;gap:8px;align-items:flex-start;background:color-mix(in srgb, var(--warning) 14%, transparent);border-radius:var(--radius-md);padding:10px 14px">
+          <x-import component-from-global-scope="CuidoIcon" n="TriangleAlert" s="16" hint-size="16px,16px"></x-import>
+          <span style="font:var(--type-body-sm);font-size:var(--text-xs);color:var(--ink-700)">{{ limitMsg }}</span>
+        </div>
+      </sc-if>
+
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:4px">
+        <span style="display:flex;align-items:center;gap:6px;font:var(--type-body-sm);font-size:11px;color:var(--text-muted)"><span style="width:12px;height:12px;border-radius:4px;background:var(--surface-card);border:1px solid var(--border-subtle);display:inline-block"></span>Disponible</span>
+        <span style="display:flex;align-items:center;gap:6px;font:var(--type-body-sm);font-size:11px;color:var(--text-muted)"><span style="width:12px;height:12px;border-radius:4px;background:var(--ink-200);display:inline-block"></span>Ocupado por otra actividad</span>
+        <span style="display:flex;align-items:center;gap:6px;font:var(--type-body-sm);font-size:11px;color:var(--text-muted)"><span style="width:12px;height:12px;border-radius:4px;background:{{ currentColor }};border:2px solid var(--ink-800);display:inline-block"></span>Seleccionado</span>
+      </div>
+    </div>
+
+    <div style="position:sticky;bottom:0;padding:16px 22px 22px;background:linear-gradient(to top, var(--surface-page) 70%, transparent);display:flex;gap:10px">
+      <sc-if value="{{ canGoPrev }}">
+        <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Button" variant="outline" size="lg" on-click="{{ goPrev }}" hint-size="90px,54px">Atrás</x-import>
+      </sc-if>
+      <div style="flex:1">
+        <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Button" full-width="{{ true }}" size="lg" disabled="{{ matrixContinueDisabled }}" on-click="{{ goNext }}" hint-size="100%,54px">{{ continueLabel }}</x-import>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ VISTA 3 — DASHBOARD DE RESULTADOS ============ -->
+  <sc-if value="{{isV3}}">
+    <div style="position:relative;overflow:hidden;background:var(--grad-dusk);padding:44px 22px 30px;display:flex;flex-direction:column;gap:10px">
+      <span style="position:absolute;top:-36px;left:-30px;width:140px;height:140px;border-radius:50%;background:var(--lime-300);opacity:0.4;filter:blur(8px);pointer-events:none"></span>
+      <div style="position:relative;display:flex;align-items:center;gap:8px">
+        <span style="width:34px;height:34px;border-radius:50%;background:var(--ink-800);display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+          <svg width="20" height="20" viewBox="0 0 100 100" fill="none">
+            <path d="M50 30 m 0 -14 a 14 14 0 0 1 0 28 a 9 9 0 0 1 0 -18" stroke="var(--lime-300)" stroke-width="9" stroke-linecap="round" fill="none"></path>
+            <path d="M50 40 L50 58 M50 58 L32 84 M50 58 L50 88 M50 58 L68 84" stroke="var(--lime-300)" stroke-width="9" stroke-linecap="round" fill="none"></path>
+          </svg>
+        </span>
+        <span style="font:var(--type-eyebrow);text-transform:uppercase;letter-spacing:var(--tracking-wider);color:var(--ink-600)">Resultados</span>
+      </div>
+      <h1 style="position:relative;font:var(--type-h1);font-size:var(--text-3xl);letter-spacing:var(--tracking-tight);color:var(--ink-800);margin:0">¡Hola <span style="display:inline-flex;background:var(--lime-300);border-radius:999px;padding:4px 18px;font-family:'Handjet',monospace;font-weight:700;font-size:1.15em;line-height:1.2">{{ userName }}</span>!</h1>
+      <div style="position:relative;margin-top:6px">
+        <p style="font:var(--type-body);font-size:var(--text-lg);color:var(--ink-700);margin:0">Hoy dedicaste <strong style="display:inline-flex;background:var(--ink-800);color:var(--lime-300);border-radius:8px;padding:2px 10px;font-family:'Handjet',monospace;font-size:1.15em;line-height:1.2">{{ netDisplay }}</strong> a tu cuidado y al de otras personas. Un trabajo esencial que sostiene la vida, aunque pocas veces se reconoce.</p>
+      </div>
+    </div>
+
+    <div style="padding:16px 22px 120px;display:flex;flex-direction:column;gap:16px">
+
+      <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Card" padding="md" hint-size="100%,auto">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="font:var(--type-h4);color:var(--ink-800)">Así repartiste tu tiempo de cuidado, actividad por actividad</div>
+          <sc-for list="{{ grossRows }}" as="row" hint-placeholder-count="7">
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                <span style="font:var(--type-body-sm);color:var(--text-body)">{{ row.label }}</span>
+                <span style="font:var(--type-label);color:var(--ink-800)">{{ row.display }}</span>
+              </div>
+              <div style="height:8px;border-radius:999px;background:var(--ink-150);overflow:hidden">
+                <div style="height:100%;border-radius:999px;background:{{ row.color }};width:{{ row.pctStyle }}"></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </x-import>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.StatCard" title="Tiempo total en el que cuidas" value="{{ grossDisplay }}" hint-size="100%,auto"></x-import>
+        <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.StatCard" title="Tiempo neto en el que cuidas" value="{{ netDisplay }}" tone="lime" hint-size="100%,auto"></x-import>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.StatCard" title="Del día, dedicas al cuidado" value="{{ pctCareDisplay }}" hint-size="100%,auto"></x-import>
+        <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.StatCard" title="Del día, dedicas al trabajo remunerado" value="{{ pctWorkDisplay }}" hint-size="100%,auto"></x-import>
+      </div>
+
+      <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Card" padding="md" hint-size="100%,auto">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="font:var(--type-h4);color:var(--ink-800)">¿Cómo se distribuye tu tiempo de cuidado frente al de otras personas?</div>
+          <sc-for list="{{ comparisonRows }}" as="row" hint-placeholder-count="3">
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                <span style="font:var(--type-body-sm);color:var(--text-body)">{{ row.label }}</span>
+                <span style="font:var(--type-label);color:var(--ink-800)">{{ row.display }}</span>
+              </div>
+              <div style="height:8px;border-radius:999px;background:var(--ink-150);overflow:hidden">
+                <div style="height:100%;border-radius:999px;background:{{ row.color }};width:{{ row.pctStyle }}"></div>
+              </div>
+            </div>
+          </sc-for>
+          <p style="font:var(--type-body-sm);font-size:11px;color:var(--text-muted);margin:0">Promedios nacionales de horas de cuidado no remunerado por día, según encuesta de uso del tiempo (mujeres 32 h/semana, hombres 14 h/semana).</p>
+        </div>
+      </x-import>
+
+      <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Card" tone="sunken" padding="md" hint-size="100%,auto">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <sc-if value="{{ hasOverlap }}">
+            <div style="display:flex;align-items:center;gap:8px">
+              <x-import component-from-global-scope="CuidoIcon" n="GitMerge" s="17" hint-size="17px,17px"></x-import>
+              <span style="font:var(--type-label);color:var(--ink-800)"><strong style="font-family:'Handjet',monospace;font-size:1.3em;color:var(--ink-800);background:var(--lime-300);padding:1px 8px;border-radius:6px">{{ overlapDisplay }}</strong> de cuidado ocurrió al mismo tiempo que otra actividad</span>
+            </div>
+            <p style="font:var(--type-body-sm);color:var(--text-muted);margin:0">Una misma hora puede contener más de una tarea de cuidado. Cocinar, acompañar o hacer compras suelen suceder al mismo tiempo. Por eso, algunas horas se cuentan más de una vez.</p>
+          </sc-if>
+          <sc-if value="{{ !hasOverlap }}">
+            <div style="display:flex;align-items:center;gap:8px">
+              <x-import component-from-global-scope="CuidoIcon" n="CheckCircle2" s="17" hint-size="17px,17px"></x-import>
+              <span style="font:var(--type-label);color:var(--ink-800)">Ninguna de tus horas se solapó</span>
+            </div>
+            <p style="font:var(--type-body-sm);color:var(--text-muted);margin:0">Cada hora de cuidado tuvo tu atención completa, una por una — y aun así suman {{ netDisplay }}.</p>
+          </sc-if>
+        </div>
+      </x-import>
+
+      <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Card" tone="default" padding="md" hint-size="100%,auto">
+        <div style="display:flex;align-items:center;gap:14px">
+          <span style="width:44px;height:44px;border-radius:50%;background:var(--ink-200);display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+            <x-import component-from-global-scope="CuidoIcon" n="Layers" s="20" hint-size="20px,20px"></x-import>
+          </span>
+          <sc-if value="{{ hasDoubleJornada }}">
+            <div>
+              <div style="font:var(--type-label);color:var(--ink-800)">Doble jornada</div>
+              <div style="font:var(--type-body-sm);color:var(--text-muted)">{{ doubleJornadaDisplay }} cuidaste y trabajaste al mismo tiempo. Dos jornadas, un solo cuerpo.</div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ !hasDoubleJornada }}">
+            <div>
+              <div style="font:var(--type-label);color:var(--ink-800)">Sin doble jornada hoy</div>
+              <div style="font:var(--type-body-sm);color:var(--text-muted)">Tu trabajo remunerado y tu cuidado no se cruzaron — pero {{ grossDisplay }} de cuidado siguen sin estar en ninguna nómina.</div>
+            </div>
+          </sc-if>
+        </div>
+      </x-import>
+
+      <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Card" tone="default" padding="md" hint-size="100%,auto">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font:var(--type-h4);color:var(--ink-800)">Si esto se repite cada día</div>
+          <div style="display:flex;gap:24px;flex-wrap:wrap">
+            <div>
+              <div style="font:var(--type-body-sm);color:var(--text-muted)">Al mes</div>
+              <div style="font:var(--type-h2);font-size:var(--text-2xl);letter-spacing:var(--tracking-tight);color:var(--ink-800)">{{ monthlyHoursDisplay }}</div>
+            </div>
+            <div>
+              <div style="font:var(--type-body-sm);color:var(--text-muted)">Al año</div>
+              <div style="font:var(--type-h2);font-size:var(--text-2xl);letter-spacing:var(--tracking-tight);color:var(--ink-800)">{{ annualHoursDisplay }}</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;background:var(--surface-sunken);border-radius:var(--radius-md);padding:12px 14px">
+            <x-import component-from-global-scope="CuidoIcon" n="CalendarClock" s="16" hint-size="16px,16px"></x-import>
+            <span style="font:var(--type-body-sm);color:var(--ink-700)">{{ simileText }}</span>
+          </div>
+        </div>
+      </x-import>
+
+      <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Card" tone="lime" padding="lg" hint-size="100%,auto">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <x-import component-from-global-scope="CuidoIcon" n="HandCoins" s="24" hint-size="24px,24px"></x-import>
+            <span style="font:var(--type-eyebrow);text-transform:uppercase;letter-spacing:var(--tracking-wider);opacity:0.65">Lo que vale tu tiempo</span>
+          </div>
+          <div style="display:flex;gap:24px;flex-wrap:wrap">
+            <div>
+              <div style="font:var(--type-body-sm);opacity:0.7">Al mes</div>
+              <div style="font:var(--type-h2);font-size:var(--text-3xl);letter-spacing:var(--tracking-tight)">{{ monthlyDisplay }}</div>
+            </div>
+            <div>
+              <div style="font:var(--type-body-sm);opacity:0.7">Al año</div>
+              <div style="font:var(--type-h2);font-size:var(--text-3xl);letter-spacing:var(--tracking-tight)">{{ annualDisplay }}</div>
+            </div>
+          </div>
+          <p style="font:var(--type-body-sm);font-size:11px;opacity:0.65;margin:0">Proyección condicional a partir de tus horas netas × $10.714/hora. No representa un ingreso real ni un aporte reconocido.</p>
+        </div>
+      </x-import>
+
+      <div style="display:flex;gap:8px;margin-top:4px" data-print-hide>
+        <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Button" variant="primary" size="sm" on-click="{{ downloadResults }}" style="flex:1;white-space:nowrap;padding:0 8px" hint-size="auto,34px">Descargar</x-import>
+        <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Button" variant="outline" size="sm" on-click="{{ backToV1 }}" style="flex:1;white-space:nowrap;padding:0 8px" hint-size="auto,34px">Editar horas</x-import>
+        <x-import component-from-global-scope="CuidoSistemaDeDiseO_5a985d.Button" variant="ghost" size="sm" on-click="{{ reset }}" style="flex:1;white-space:nowrap;padding:0 8px" hint-size="auto,34px">Reiniciar</x-import>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ============ TARJETA DE RESULTADOS PARA DESCARGAR (PNG 16:9) ============ -->
+  <!-- Nota: todo en colores hex/px fijos (sin var()) porque html2canvas no resuelve custom properties. -->
+  <div id="cuido-png-slide" style="position:fixed;top:0;left:-4000px;width:1600px;height:900px;overflow:hidden;background:linear-gradient(135deg, #bb96da 0%, #efaf86 100%);font-family:Urbanist,sans-serif;box-sizing:border-box;display:flex;flex-direction:column;padding:56px 72px;z-index:-1">
+    <span style="position:absolute;top:-90px;left:-70px;width:340px;height:340px;border-radius:50%;background:#fcfd76;opacity:0.35;pointer-events:none"></span>
+    <span style="position:absolute;bottom:-110px;right:-60px;width:300px;height:300px;border-radius:50%;background:#bb96da;opacity:0.3;pointer-events:none"></span>
+
+    <div style="position:relative;display:flex;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:14px">
+        <span style="width:44px;height:44px;border-radius:50%;background:#212121;display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+          <svg width="25" height="25" viewBox="0 0 100 100" fill="none">
+            <path d="M50 30 m 0 -14 a 14 14 0 0 1 0 28 a 9 9 0 0 1 0 -18" stroke="#fcfd76" stroke-width="8" stroke-linecap="round" fill="none"></path>
+            <path d="M50 40 L50 58 M50 58 L32 84 M50 58 L50 88 M50 58 L68 84" stroke="#fcfd76" stroke-width="8" stroke-linecap="round" fill="none"></path>
+          </svg>
+        </span>
+        <span style="font-weight:600;font-size:20px;text-transform:uppercase;letter-spacing:0.14em;color:#333333">Cuida</span>
+      </div>
+      <span style="font-weight:600;font-size:15px;color:#4a4a4a;background:rgba(255,255,255,0.6);padding:8px 18px;border-radius:999px">Ejercicio personal · {{ todayDisplay }}</span>
+    </div>
+
+    <div style="position:relative;margin-top:18px">
+      <span style="font-weight:600;font-size:16px;text-transform:uppercase;letter-spacing:0.14em;color:#4a4a4a">Resultados de {{ userName }}</span>
+      <h1 style="margin:4px 0 0;font-weight:700;font-size:52px;line-height:1.1;letter-spacing:-0.02em;color:#212121">Hoy dediqué <span style="display:inline-block;background:#212121;color:#fcfd76;border-radius:12px;padding:2px 18px;font-family:Handjet,monospace;font-weight:700;font-size:1.2em;line-height:1.15">{{ netDisplay }}</span> a cuidar</h1>
+    </div>
+
+    <div style="position:relative;display:flex;gap:16px;margin-top:24px">
+      <div style="flex:1;background:rgba(255,255,255,0.78);border-radius:18px;padding:18px 22px;box-shadow:0 6px 18px rgba(75,45,70,0.12);display:flex;align-items:center;gap:16px">
+        <span style="width:44px;height:44px;border-radius:50%;background:#fcfd76;display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+        </span>
+        <div>
+          <div style="font-weight:600;font-size:11.5px;line-height:1.3;text-transform:uppercase;letter-spacing:0.06em;color:#6b6b6b">Tiempo total (con cruces)</div>
+          <div style="font-weight:700;font-size:28px;letter-spacing:-0.02em;color:#212121;margin-top:8px">{{ grossDisplay }}</div>
+        </div>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,0.78);border-radius:18px;padding:18px 22px;box-shadow:0 6px 18px rgba(75,45,70,0.12);display:flex;align-items:center;gap:16px">
+        <span style="width:44px;height:44px;border-radius:50%;background:#bb96da;display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"></path></svg>
+        </span>
+        <div>
+          <div style="font-weight:600;font-size:11.5px;line-height:1.3;text-transform:uppercase;letter-spacing:0.06em;color:#6b6b6b">Del día, dedicó al cuidado</div>
+          <div style="font-weight:700;font-size:28px;letter-spacing:-0.02em;color:#212121;margin-top:8px">{{ pctCareDisplay }}</div>
+        </div>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,0.78);border-radius:18px;padding:18px 22px;box-shadow:0 6px 18px rgba(75,45,70,0.12);display:flex;align-items:center;gap:16px">
+        <span style="width:44px;height:44px;border-radius:50%;background:#efaf86;display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+        </span>
+        <div>
+          <div style="font-weight:600;font-size:11.5px;line-height:1.3;text-transform:uppercase;letter-spacing:0.06em;color:#6b6b6b">Del día, trabajo remunerado</div>
+          <div style="font-weight:700;font-size:28px;letter-spacing:-0.02em;color:#212121;margin-top:8px">{{ pctWorkDisplay }}</div>
+        </div>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,0.78);border-radius:18px;padding:18px 22px;box-shadow:0 6px 18px rgba(75,45,70,0.12);display:flex;align-items:center;gap:16px">
+        <span style="width:44px;height:44px;border-radius:50%;background:#c4c4c4;display:flex;align-items:center;justify-content:center;flex:0 0 auto">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+        </span>
+        <div>
+          <div style="font-weight:600;font-size:11.5px;line-height:1.3;text-transform:uppercase;letter-spacing:0.06em;color:#6b6b6b">Horas de trabajo remunerado</div>
+          <div style="font-weight:700;font-size:28px;letter-spacing:-0.02em;color:#212121;margin-top:8px">{{ workHoursDisplay }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:relative;flex:1;display:flex;gap:18px;margin-top:20px;min-height:0">
+      <div style="flex:1.05;background:rgba(255,255,255,0.62);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;justify-content:flex-start;gap:12px;overflow:hidden">
+        <div style="font-weight:600;font-size:18px;color:#212121">Por tipo de cuidado</div>
+        <sc-for list="{{ slideGrossRows }}" as="row" hint-placeholder-count="5">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+              <span style="font-size:15px;color:#333333">{{ row.label }}</span>
+              <span style="font-weight:600;font-size:15px;color:#212121">{{ row.display }}</span>
+            </div>
+            <div style="height:11px;border-radius:999px;background:rgba(0,0,0,0.08);overflow:hidden">
+              <div style="height:100%;border-radius:999px;background:{{ row.hex }};width:{{ row.pctStyle }}"></div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="flex:0.95;background:rgba(255,255,255,0.62);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;justify-content:flex-start;gap:12px;overflow:hidden">
+        <div style="font-weight:600;font-size:18px;color:#212121">Frente a otras personas</div>
+        <sc-for list="{{ slideComparisonRows }}" as="row" hint-placeholder-count="3">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+              <span style="font-size:15px;color:#333333">{{ row.label }}</span>
+              <span style="font-weight:600;font-size:15px;color:#212121">{{ row.display }}</span>
+            </div>
+            <div style="height:11px;border-radius:999px;background:rgba(0,0,0,0.08);overflow:hidden">
+              <div style="height:100%;border-radius:999px;background:{{ row.hex }};width:{{ row.pctStyle }}"></div>
+            </div>
+          </div>
+        </sc-for>
+        <div style="height:1px;background:rgba(0,0,0,0.12);margin:2px 0"></div>
+        <sc-if value="{{ hasOverlap }}">
+          <div>
+            <div style="font-size:14px;color:#212121"><strong>{{ overlapDisplay }}</strong> de cuidado ocurrió al mismo tiempo que otra actividad</div>
+            <div style="font-size:12px;color:#4a4a4a;line-height:1.35;margin-top:4px">Una misma hora puede contener más de una tarea de cuidado. Cocinar, acompañar o hacer compras suelen suceder al mismo tiempo. Por eso, algunas horas se cuentan más de una vez.</div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ !hasOverlap }}">
+          <div style="font-size:14px;color:#4a4a4a;line-height:1.35">Ninguna hora de cuidado se solapó con otra actividad.</div>
+        </sc-if>
+        <div style="font-size:13px;color:#4a4a4a;line-height:1.35">{{ jornadaInsight }}</div>
+      </div>
+
+      <div style="flex:0.85;background:#212121;border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;justify-content:flex-start;gap:14px;color:#fcfd76;overflow:hidden">
+        <div style="font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.85">Lo que vale su tiempo</div>
+        <div>
+          <div style="font-size:14px;opacity:0.75">Al mes</div>
+          <div style="font-weight:700;font-size:30px;letter-spacing:-0.02em">{{ monthlyDisplay }}</div>
+        </div>
+        <div>
+          <div style="font-size:14px;opacity:0.75">Al año</div>
+          <div style="font-weight:700;font-size:30px;letter-spacing:-0.02em">{{ annualDisplay }}</div>
+        </div>
+        <div style="height:1px;background:rgba(252,253,118,0.25);margin:0"></div>
+        <div>
+          <div style="font-size:14px;opacity:0.75">Si esto se repite, al mes</div>
+          <div style="font-weight:600;font-size:19px">{{ monthlyHoursDisplay }}</div>
+        </div>
+        <div>
+          <div style="font-size:14px;opacity:0.75">Si esto se repite, al año</div>
+          <div style="font-weight:600;font-size:19px">{{ annualHoursDisplay }}</div>
+        </div>
+        <div style="font-size:12.5px;line-height:1.35;opacity:0.85">{{ simileText }}</div>
+      </div>
+    </div>
+
+    <div style="position:relative;display:flex;justify-content:space-between;align-items:center;margin-top:16px">
+      <p style="margin:0;font-size:14px;color:#4a4a4a;max-width:1080px;line-height:1.4">Ejercicio de reflexión personal, no una medición exacta. Proyección de valor a partir de horas netas × $10.714/hora. No representa un ingreso real ni un aporte reconocido.</p>
+      <span style="font-weight:600;font-size:15px;color:#333333;white-space:nowrap">yocuida</span>
+    </div>
+  </div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CARE_CATEGORIES = [
+  { key: 'oficios_hogar', label: 'Oficios del hogar', short: 'Hogar', icon: 'House', color: 'var(--cyan)', unit: 'daily', max: 16 },
+  { key: 'alimentacion', label: 'Alimentación', short: 'Alimentación', icon: 'CookingPot', color: 'var(--peach)', unit: 'daily', max: 16 },
+  { key: 'ropa_calzado', label: 'Ropa y calzado', short: 'Ropa', icon: 'Shirt', color: 'var(--sky)', unit: 'daily', max: 12 },
+  { key: 'compras_traslados', label: 'Compras y traslados', short: 'Compras', icon: 'ShoppingBag', color: 'var(--mint)', unit: 'daily', max: 12 },
+  { key: 'cuidado_menores', label: 'Cuidado de menores de 5 años', short: 'Menores', icon: 'Baby', color: 'var(--lavender)', unit: 'daily', max: 20 },
+  { key: 'cuidado_enfermos', label: 'Cuidado a personas enfermas o con discapacidad', short: 'Enfermos', icon: 'HeartHandshake', color: 'var(--lavender-strong)', unit: 'daily', max: 20 },
+  { key: 'voluntariado', label: 'Voluntariado', short: 'Voluntariado', icon: 'HandHeart', color: 'var(--lime-200)', unit: 'weekly', max: 40 },
+];
+const TRABAJO = { key: 'trabajo', label: 'Trabajo o negocio', icon: 'Briefcase', color: 'var(--ink-300)', unit: 'daily', max: 16 };
+const RATE_HOUR = 10714;
+const STORAGE_KEY = 'cuido-reflexion-v1';
+const NATIONAL_AVG_DAILY = { mujeres: 32 / 7, hombres: 14 / 7 };
+
+function defaultHours() {
+  const o = {};
+  CARE_CATEGORIES.forEach((c) => { o[c.key] = 0; });
+  o[TRABAJO.key] = 0;
+  return o;
+}
+
+function dailyHoursFor(cat, raw) {
+  return cat.unit === 'weekly' ? raw / 7 : raw;
+}
+
+function fmtHours(n) {
+  const r = Math.round(n * 10) / 10;
+  return r.toString().replace('.', ',') + ' h';
+}
+
+function fmtCOP(n) {
+  return '$' + Math.round(n).toLocaleString('es-CO');
+}
+
+function pad2(n) {
+  return String(n).padStart(2, '0');
+}
+
+function fmt12(h) {
+  const period = h < 12 ? 'am' : 'pm';
+  let hr = h % 12;
+  if (hr === 0) hr = 12;
+  return { hr, period };
+}
+
+const COLOR_HEX = {
+  'var(--cyan)': '#93dcdf',
+  'var(--peach)': '#efaf86',
+  'var(--sky)': '#c7e6f2',
+  'var(--mint)': '#b9e6c8',
+  'var(--lavender)': '#d7d7f4',
+  'var(--lavender-strong)': '#bb96da',
+  'var(--lime-200)': '#fcfd9b',
+  'var(--lime-300)': '#fcfd76',
+  'var(--ink-300)': '#c4c4c4',
+};
+function toHex(v) { return COLOR_HEX[v] || v; }
+
+class Component extends DCLogic {
+  state = { view: 'v0', hours: defaultHours(), matrix: {}, activeIndex: 0, limitMsg: null, user: { name: '' }, loginDraft: { name: '' } };
+
+  componentDidMount() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        const user = parsed.user || { name: '' };
+        this.setState({
+          hours: { ...defaultHours(), ...(parsed.hours || {}) },
+          matrix: parsed.matrix || {},
+          view: user.name ? (parsed.view || 'v1') : 'v0',
+          activeIndex: parsed.activeIndex || 0,
+          user,
+          loginDraft: { name: user.name || '' },
+        });
+      }
+    } catch (e) {}
+  }
+
+  save() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        hours: this.state.hours, matrix: this.state.matrix, view: this.state.view, activeIndex: this.state.activeIndex, user: this.state.user,
+      }));
+    } catch (e) {}
+  }
+
+  setLoginField(field, value) {
+    this.setState((s) => ({ loginDraft: { ...s.loginDraft, [field]: value } }));
+  }
+
+  submitLogin() {
+    const draft = this.state.loginDraft;
+    if (!draft.name.trim()) return;
+    this.setState({ user: { name: draft.name.trim() }, view: 'v1' }, () => this.save());
+  }
+
+  sequence() {
+    return [...CARE_CATEGORIES, TRABAJO].filter((c) => (this.state.hours[c.key] || 0) > 0);
+  }
+
+  targetFor(cat) {
+    const raw = this.state.hours[cat.key] || 0;
+    const daily = dailyHoursFor(cat, raw);
+    return Math.max(0, Math.min(24, Math.round(daily)));
+  }
+
+  setHour(key, val) {
+    this.setState((s) => ({ hours: { ...s.hours, [key]: val } }), () => this.save());
+  }
+
+  stepHour(key, max, delta) {
+    this.setState((s) => {
+      const next = Math.max(0, Math.min(max, (s.hours[key] || 0) + delta));
+      return { hours: { ...s.hours, [key]: next } };
+    }, () => this.save());
+  }
+
+  toggleHour(h) {
+    const seq = this.sequence();
+    const current = seq[this.state.activeIndex];
+    if (!current) return;
+    const target = this.targetFor(current);
+    this.setState((s) => {
+      const arr = new Set(s.matrix[current.key] || []);
+      if (arr.has(h)) {
+        arr.delete(h);
+        return { matrix: { ...s.matrix, [current.key]: Array.from(arr).sort((a, b) => a - b) }, limitMsg: null };
+      }
+      if (arr.size >= target) {
+        return { limitMsg: `Ya ubicaste tus ${target} horas de ${current.label}. Quita una para mover otra.` };
+      }
+      arr.add(h);
+      return { matrix: { ...s.matrix, [current.key]: Array.from(arr).sort((a, b) => a - b) }, limitMsg: null };
+    }, () => this.save());
+  }
+
+  startMatrix() {
+    const seq = this.sequence();
+    this.setState({ view: seq.length ? 'v2' : 'v3', activeIndex: 0, limitMsg: null }, () => this.save());
+  }
+
+  backToV1() {
+    this.setState({ view: 'v1' }, () => this.save());
+  }
+
+  goPrev() {
+    if (this.state.activeIndex > 0) {
+      this.setState((s) => ({ activeIndex: s.activeIndex - 1, limitMsg: null }), () => this.save());
+    }
+  }
+
+  goNext() {
+    const seq = this.sequence();
+    const current = seq[this.state.activeIndex];
+    if (!current) return;
+    const target = this.targetFor(current);
+    const placed = (this.state.matrix[current.key] || []).length;
+    if (placed < target) return;
+    const nextIdx = this.state.activeIndex + 1;
+    if (nextIdx >= seq.length) {
+      this.setState({ view: 'v3' }, () => this.save());
+    } else {
+      this.setState({ activeIndex: nextIdx, limitMsg: null }, () => this.save());
+    }
+  }
+
+  reset() {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    this.setState({ view: 'v0', hours: defaultHours(), matrix: {}, activeIndex: 0, limitMsg: null, user: { name: '' }, loginDraft: { name: '' } });
+  }
+
+  downloadPng() {
+    const node = document.getElementById('cuido-png-slide');
+    if (!node || !window.html2canvas) { window.print(); return; }
+    window.html2canvas(node, { width: 1600, height: 900, scale: 2, backgroundColor: null, useCORS: true }).then((canvas) => {
+      const link = document.createElement('a');
+      const safeName = (this.state.user.name || 'resultados').trim().toLowerCase().replace(/\s+/g, '-');
+      link.download = `cuido-${safeName}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }).catch(() => window.print());
+  }
+
+  buildHourCells(current, target) {
+    const seq = this.sequence();
+    const selected = new Set(this.state.matrix[current.key] || []);
+    const limitReached = selected.size >= target;
+    const cells = [];
+    for (let h = 0; h < 24; h++) {
+      let occupiedBy = null;
+      for (const c of seq) {
+        if (c.key === current.key) continue;
+        if ((this.state.matrix[c.key] || []).includes(h)) { occupiedBy = c; break; }
+      }
+      const isSelected = selected.has(h);
+      let background, border, color, statusLabel, squareBg, squareBorder;
+      if (isSelected && occupiedBy) {
+        background = `repeating-linear-gradient(45deg, ${current.color} 0 6px, ${occupiedBy.color} 6px 12px)`;
+        border = '2px solid var(--warning)';
+        color = 'var(--ink-800)';
+        statusLabel = 'Se solapa';
+        squareBg = background;
+        squareBorder = '2px solid var(--warning)';
+      } else if (isSelected) {
+        background = current.color;
+        border = '2px solid var(--ink-800)';
+        color = 'var(--ink-800)';
+        statusLabel = 'Seleccionada';
+        squareBg = current.color;
+        squareBorder = '2px solid var(--ink-800)';
+      } else if (occupiedBy) {
+        background = 'var(--ink-200)';
+        border = '1px solid var(--border-subtle)';
+        color = 'var(--ink-600)';
+        statusLabel = 'Ocupada';
+        squareBg = occupiedBy.color;
+        squareBorder = '1px solid var(--border-subtle)';
+      } else {
+        background = 'var(--surface-card)';
+        border = '1px solid var(--border-subtle)';
+        color = 'var(--ink-600)';
+        statusLabel = 'Disponible';
+        squareBg = 'var(--surface-card)';
+        squareBorder = '1px solid var(--border-default)';
+      }
+      const dimmed = limitReached && !isSelected;
+      const start = fmt12(h);
+      const end = fmt12((h + 1) % 24);
+      cells.push({
+        hour: h,
+        hourLabel: pad2(h) + ':00',
+        hourShort: `${start.hr}-${end.hr}${end.period}`,
+        rangeLabel: `${pad2(h)}:00–${pad2((h + 1) % 24)}:00`,
+        fullRangeLabel: `${start.hr}:00 ${start.period}–${end.hr}:00 ${end.period}`,
+        statusLabel,
+        background, border, color, squareBg, squareBorder,
+        opacity: dimmed ? 0.38 : 1,
+        cursorStyle: dimmed ? 'not-allowed' : 'pointer',
+        onClick: () => this.toggleHour(h),
+      });
+    }
+    return cells;
+  }
+
+  renderVals() {
+    const s = this.state;
+    const seq = this.sequence();
+    const current = seq[s.activeIndex] || null;
+
+    const catRows = CARE_CATEGORIES.map((c) => ({
+      key: c.key, label: c.label, icon: c.icon, color: c.color, max: c.max,
+      value: s.hours[c.key] || 0,
+      format: (v) => `${v}${c.unit === 'weekly' ? ' h/sem' : ' h'}`,
+      onChange: (e) => this.setHour(c.key, Number(e.target.value)),
+      onDecrement: () => this.stepHour(c.key, c.max, -1),
+      onIncrement: () => this.stepHour(c.key, c.max, 1),
+      canDecrement: (s.hours[c.key] || 0) > 0,
+      canIncrement: (s.hours[c.key] || 0) < c.max,
+      isWeekly: c.unit === 'weekly',
+    }));
+    const trabajoRow = {
+      key: TRABAJO.key, label: TRABAJO.label, icon: TRABAJO.icon, color: TRABAJO.color, max: TRABAJO.max,
+      value: s.hours[TRABAJO.key] || 0,
+      format: (v) => `${v} h`,
+      onChange: (e) => this.setHour(TRABAJO.key, Number(e.target.value)),
+      onDecrement: () => this.stepHour(TRABAJO.key, TRABAJO.max, -1),
+      onIncrement: () => this.stepHour(TRABAJO.key, TRABAJO.max, 1),
+      canDecrement: (s.hours[TRABAJO.key] || 0) > 0,
+      canIncrement: (s.hours[TRABAJO.key] || 0) < TRABAJO.max,
+    };
+    const v1Disabled = Object.values(s.hours).every((v) => !v);
+
+    let target = 0, placed = 0, hourCells = [];
+    if (current) {
+      target = this.targetFor(current);
+      placed = (s.matrix[current.key] || []).length;
+      hourCells = this.buildHourCells(current, target);
+    }
+    // Dashboard
+    const grossRows = CARE_CATEGORIES.map((c) => {
+      const g = dailyHoursFor(c, s.hours[c.key] || 0);
+      return { key: c.key, label: c.label, short: c.short, color: c.color, hours: g };
+    });
+    const grossTotal = grossRows.reduce((sum, r) => sum + r.hours, 0);
+    grossRows.forEach((r) => { r.display = fmtHours(r.hours); r.pctStyle = (grossTotal ? (r.hours / grossTotal * 100) : 0) + '%'; });
+
+    const RADAR_SIZE = 280;
+    const RADAR_CENTER = RADAR_SIZE / 2;
+    const RADAR_RADIUS = 96;
+    const radarMax = Math.max(2, Math.ceil(Math.max(1, ...grossRows.map((r) => r.hours)) / 2) * 2);
+    const angleStep = (2 * Math.PI) / grossRows.length;
+    const ringFn = (frac) => grossRows.map((r, i) => {
+      const angle = -Math.PI / 2 + i * angleStep;
+      const x = RADAR_CENTER + Math.cos(angle) * RADAR_RADIUS * frac;
+      const y = RADAR_CENTER + Math.sin(angle) * RADAR_RADIUS * frac;
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    }).join(' ');
+    const radarRings = [0.33, 0.66, 1].map(ringFn);
+    const radarPolygonPoints = grossRows.map((r, i) => {
+      const angle = -Math.PI / 2 + i * angleStep;
+      const value = Math.min(1, r.hours / radarMax);
+      const x = RADAR_CENTER + Math.cos(angle) * RADAR_RADIUS * value;
+      const y = RADAR_CENTER + Math.sin(angle) * RADAR_RADIUS * value;
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    }).join(' ');
+    const radarMarkers = grossRows.map((r, i) => {
+      const angle = -Math.PI / 2 + i * angleStep;
+      const value = Math.min(1, r.hours / radarMax);
+      return {
+        cx: (RADAR_CENTER + Math.cos(angle) * RADAR_RADIUS * value).toFixed(1),
+        cy: (RADAR_CENTER + Math.sin(angle) * RADAR_RADIUS * value).toFixed(1),
+        color: r.color,
+      };
+    });
+    const radarAxes = grossRows.map((r, i) => {
+      const angle = -Math.PI / 2 + i * angleStep;
+      const x2 = RADAR_CENTER + Math.cos(angle) * RADAR_RADIUS;
+      const y2 = RADAR_CENTER + Math.sin(angle) * RADAR_RADIUS;
+      const labelX = RADAR_CENTER + Math.cos(angle) * (RADAR_RADIUS + 30);
+      const labelY = RADAR_CENTER + Math.sin(angle) * (RADAR_RADIUS + 30);
+      let anchor = 'middle';
+      if (Math.cos(angle) > 0.3) anchor = 'start';
+      else if (Math.cos(angle) < -0.3) anchor = 'end';
+      const labelTransform = anchor === 'start' ? 'translate(0,-50%)' : anchor === 'end' ? 'translate(-100%,-50%)' : 'translate(-50%,-50%)';
+      return { x2: x2.toFixed(1), y2: y2.toFixed(1), labelX: labelX.toFixed(1), labelY: labelY.toFixed(1), anchor, labelTransform, shortLabel: r.short };
+    });
+
+    const unionSet = new Set();
+    CARE_CATEGORIES.forEach((c) => (s.matrix[c.key] || []).forEach((h) => unionSet.add(h)));
+    const netHours = unionSet.size;
+    const overlapHours = Math.max(0, grossTotal - netHours);
+    const trabajoSet = new Set(s.matrix[TRABAJO.key] || []);
+    const doubleJornada = [...unionSet].filter((h) => trabajoSet.has(h)).length;
+    const monthly = netHours * RATE_HOUR * 30;
+    const annual = netHours * RATE_HOUR * 360;
+
+    const monthlyHours = netHours * 30;
+    const annualHours = netHours * 360;
+    const annualDays24h = annualHours / 24;
+    const workdays8h = annualHours / 8;
+    let simileText;
+    if (netHours <= 0) {
+      simileText = 'Todav\u00eda no registraste horas de cuidado sin cruces \u2014 vuelve a la matriz para ubicarlas.';
+    } else if (annualDays24h >= 1) {
+      simileText = `Eso equivale a ${Math.round(annualDays24h)} d\u00edas completos, sin parar, dedicados solo a cuidar \u2014 o a ${Math.round(workdays8h)} jornadas laborales de 8 horas en un a\u00f1o.`;
+    } else {
+      simileText = `Eso equivale a ${Math.round(workdays8h)} jornadas laborales de 8 horas en un a\u00f1o.`;
+    }
+
+    const workDailyHours = dailyHoursFor(TRABAJO, s.hours[TRABAJO.key] || 0);
+    const pctCare = Math.round(Math.min(100, (grossTotal / 24) * 100));
+    const pctWork = Math.round(Math.min(100, (workDailyHours / 24) * 100));
+
+    const userName = s.user.name || 'ti';
+    const comparisonRows = [
+      { label: `Tú (${userName})`, hours: grossTotal, color: 'var(--lime-300)' },
+      { label: 'Mujeres (promedio nacional)', hours: NATIONAL_AVG_DAILY.mujeres, color: 'var(--lavender-strong)' },
+      { label: 'Hombres (promedio nacional)', hours: NATIONAL_AVG_DAILY.hombres, color: 'var(--sky)' },
+    ];
+    const comparisonMax = Math.max(...comparisonRows.map((r) => r.hours), 1);
+    comparisonRows.forEach((r) => { r.display = fmtHours(r.hours); r.pctStyle = (r.hours / comparisonMax * 100) + '%'; });
+
+    return {
+      isV0: s.view === 'v0', isV1: s.view === 'v1', isV2: s.view === 'v2', isV3: s.view === 'v3',
+      loginName: s.loginDraft.name,
+      loginValid: !!(s.loginDraft.name.trim()),
+      onLoginNameChange: (e) => this.setLoginField('name', e && e.target ? e.target.value : e),
+      submitLogin: () => this.submitLogin(),
+      userName,
+      catRows, trabajoRow, v1Disabled,
+      startMatrix: () => this.startMatrix(),
+      backToV1: () => this.backToV1(),
+      reset: () => this.reset(),
+      downloadResults: () => this.downloadPng(),
+
+      currentColor: current ? current.color : 'var(--ink-300)',
+      currentIcon: current ? current.icon : 'Clock',
+      currentLabel: current ? current.label : '',
+      activityStep: s.activeIndex + 1,
+      activityTotal: seq.length,
+      placed, target,
+      hourCells,
+      hasLimitMsg: !!s.limitMsg,
+      limitMsg: s.limitMsg,
+      canGoPrev: s.activeIndex > 0,
+      goPrev: () => this.goPrev(),
+      goNext: () => this.goNext(),
+      matrixContinueDisabled: !current || placed < target,
+      continueLabel: s.activeIndex >= seq.length - 1 ? 'Ver mis resultados' : 'Siguiente actividad',
+
+      grossRows,
+      radarSize: RADAR_SIZE,
+      radarCenter: RADAR_CENTER,
+      radarRings,
+      radarAxes,
+      radarPolygonPoints,
+      radarMarkers,
+      grossDisplay: fmtHours(grossTotal),
+      netDisplay: fmtHours(netHours),
+      overlapDisplay: fmtHours(overlapHours),
+      doubleJornadaDisplay: fmtHours(doubleJornada),
+      monthlyDisplay: fmtCOP(monthly),
+      annualDisplay: fmtCOP(annual),
+      pctCareDisplay: pctCare + '%',
+      pctWorkDisplay: pctWork + '%',
+      workHoursDisplay: fmtHours(workDailyHours),
+      todayDisplay: new Date().toLocaleDateString('es-CO', { day: 'numeric', month: 'long', year: 'numeric' }),
+      slideGrossRows: grossRows.filter((r) => r.hours > 0).sort((a, b) => b.hours - a.hours).slice(0, 6).map((r) => ({ ...r, hex: toHex(r.color) })),
+      slideComparisonRows: comparisonRows.map((r) => ({ ...r, hex: toHex(r.color) })),
+      overlapInsight: overlapHours > 0 ? `${fmtHours(overlapHours)} de cuidado ocurrieron al mismo tiempo que otra actividad.` : 'Ninguna hora de cuidado se solapó con otra actividad.',
+      jornadaInsight: doubleJornada > 0 ? `${fmtHours(doubleJornada)} cuidó y trabajó al mismo tiempo (doble jornada).` : 'Su trabajo remunerado y su cuidado no se cruzaron hoy.',
+      comparisonRows,
+      hasOverlap: overlapHours > 0,
+      hasDoubleJornada: doubleJornada > 0,
+      monthlyHoursDisplay: fmtHours(monthlyHours),
+      annualHoursDisplay: fmtHours(annualHours),
+      simileText,
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+/* ============================================================
+   Cuido — Typography tokens
+   Familia: Urbanist (texto/display), Handjet (matriz de puntos).
+   ============================================================ */
+
+:root {
+  /* ---- Familias ---- */
+  --font-sans:    'Urbanist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: 'Urbanist', ui-sans-serif, system-ui, sans-serif;
+  --font-dot:     'Handjet', 'Urbanist', monospace; /* titulares decorativos LED */
+
+  /* ---- Escala tipográfica (px) ---- */
+  --text-3xs: 0.6875rem; /* 11 */
+  --text-2xs: 0.75rem;   /* 12 */
+  --text-xs:  0.8125rem; /* 13 */
+  --text-sm:  0.875rem;  /* 14 */
+  --text-md:  1rem;      /* 16 — base */
+  --text-lg:  1.125rem;  /* 18 */
+  --text-xl:  1.375rem;  /* 22 */
+  --text-2xl: 1.75rem;   /* 28 */
+  --text-3xl: 2.25rem;   /* 36 */
+  --text-4xl: 3rem;      /* 48 */
+  --text-5xl: 4rem;      /* 64 */
+  --text-6xl: 5.5rem;    /* 88 */
+
+  /* ---- Pesos ---- */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* ---- Interlineado ---- */
+  --leading-tight:   1.05;
+  --leading-snug:    1.2;
+  --leading-normal:  1.45;
+  --leading-relaxed: 1.65;
+
+  /* ---- Tracking ---- */
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-wider:  0.14em; /* eyebrows / labels en mayúscula */
+
+  /* ============================================================
+     Roles semánticos
+     ============================================================ */
+  --type-display:  var(--weight-medium) var(--text-6xl)/var(--leading-tight) var(--font-display);
+  --type-h1:       var(--weight-semibold) var(--text-4xl)/var(--leading-snug) var(--font-display);
+  --type-h2:       var(--weight-semibold) var(--text-3xl)/var(--leading-snug) var(--font-sans);
+  --type-h3:       var(--weight-semibold) var(--text-2xl)/var(--leading-snug) var(--font-sans);
+  --type-h4:       var(--weight-medium) var(--text-xl)/var(--leading-snug) var(--font-sans);
+  --type-body:     var(--weight-regular) var(--text-md)/var(--leading-normal) var(--font-sans);
+  --type-body-sm:  var(--weight-regular) var(--text-sm)/var(--leading-normal) var(--font-sans);
+  --type-label:    var(--weight-semibold) var(--text-xs)/var(--leading-snug) var(--font-sans);
+  --type-eyebrow:  var(--weight-semibold) var(--text-2xs)/var(--leading-snug) var(--font-sans);
+}

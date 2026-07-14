@@ -1,0 +1,31 @@
+/* ============================================================
+   Cuido — Effects tokens
+   Glassmorphism, blur, gradientes de marca y movimiento.
+   ============================================================ */
+
+:root {
+  /* Blur / frost */
+  --blur-sm: 8px;
+  --blur-md: 18px;
+  --blur-lg: 32px;
+
+  --glass-blur:      saturate(140%) blur(var(--blur-md));
+  --glass-blur-soft: saturate(120%) blur(var(--blur-sm));
+
+  /* Gradientes de marca (fondos cálidos y difusos del moodboard) */
+  --grad-warm:     radial-gradient(120% 120% at 20% 15%, #efd9c2 0%, #e6c9e0 45%, #cfc6ef 100%); /* @kind other */
+  --grad-aurora:   radial-gradient(100% 120% at 80% 0%, #d7d7f4 0%, #c7e6f2 40%, #b9e6c8 100%); /* @kind other */
+  --grad-dusk:     linear-gradient(135deg, #bb96da 0%, #efaf86 100%); /* @kind other */
+  --grad-lime:     linear-gradient(135deg, #fcfd76 0%, #eef05a 100%); /* @kind other */
+  --grad-lime-soft:radial-gradient(120% 120% at 0% 0%, #fcfeb8 0%, #fcfd76 100%); /* @kind other */
+  --grad-ink:      linear-gradient(160deg, #333333 0%, #121212 100%); /* @kind other */
+
+  /* Movimiento */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-in-out:cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --ease-spring:cubic-bezier(0.34, 1.56, 0.64, 1); /* @kind other */
+
+  --dur-fast:   140ms; /* @kind other */
+  --dur-base:   240ms; /* @kind other */
+  --dur-slow:   420ms; /* @kind other */
+}
