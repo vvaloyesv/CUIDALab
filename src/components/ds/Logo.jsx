@@ -1,4 +1,4 @@
-// Marca de Cuido: espiral que remata en una copa con raíces abajo —
+// Marca de Cuida: espiral que remata en una copa con raíces abajo —
 // cuidado continuo que también sostiene y da estabilidad.
 export default function Logo({ size = 20, color = 'var(--lime-300)', strokeWidth = 8 }) {
   return (

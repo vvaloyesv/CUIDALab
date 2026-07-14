@@ -106,8 +106,8 @@ export default function ReportSlide({
       <div style={{ position: 'relative', display: 'flex', gap: 16, marginTop: 24 }}>
         <StatCard icon="Clock" iconBg="var(--lime-300)" label="Tiempo total en el que cuidas" value={grossDisplay} />
         <StatCard icon="Heart" iconBg="var(--lavender-strong)" label="Del día, dedicas al cuidado" value={pctCareDisplay} />
-        <StatCard icon="Briefcase" iconBg="var(--peach)" label="Del día, dedicas al trabajo remunerado" value={pctWorkDisplay} />
         <StatCard icon="Clock" iconBg="var(--ink-300)" label="Horas de trabajo remunerado" value={workHoursDisplay} />
+        <StatCard icon="Briefcase" iconBg="var(--peach)" label="Del día, dedicas al trabajo remunerado" value={pctWorkDisplay} />
       </div>
 
       {/* cuerpo: 3 columnas */}

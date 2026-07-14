@@ -1,4 +1,4 @@
--- Cuido — Simulador de trabajo de cuidado no remunerado
+-- Cuida — Simulador de trabajo de cuidado no remunerado
 -- Tabla de resultados + política de seguridad (RLS)
 --
 -- Correr este script completo en Supabase → SQL Editor → New query → Run.

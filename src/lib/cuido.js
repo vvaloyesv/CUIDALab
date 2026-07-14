@@ -12,7 +12,7 @@ export const TRABAJO = { key: 'trabajo', label: 'Trabajo o negocio', icon: 'Brie
 
 export const RATE_HOUR = 10714;
 export const STORAGE_KEY = 'cuido-reflexion-v1';
-export const NATIONAL_AVG_DAILY = { mujeres: 32 / 7, hombres: 14 / 7 };
+export const NATIONAL_AVG_DAILY = { mujeres: 7 + 35 / 60, hombres: 3 + 14 / 60 };
 
 export function defaultHours() {
   const o = {};

@@ -116,7 +116,7 @@ export default function View3Dashboard({ cuido }) {
             <div style={{ font: 'var(--type-h4)', color: 'var(--ink-800)' }}>¿Cómo se distribuye tu tiempo de cuidado frente al de otras personas?</div>
             {comparisonRows.map((row) => <BarRow key={row.label} row={row} />)}
             <p style={{ font: 'var(--type-body-sm)', fontSize: 11, color: 'var(--text-muted)', margin: 0 }}>
-              Promedios nacionales de horas de cuidado no remunerado por día, según encuesta de uso del tiempo (mujeres 32 h/semana, hombres 14 h/semana).
+              Promedios nacionales de horas de cuidado no remunerado por día, según encuesta de uso del tiempo (mujeres 7 h 35 min, hombres 3 h 14 min).
             </p>
           </div>
         </Card>
