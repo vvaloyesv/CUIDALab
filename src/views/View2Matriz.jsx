@@ -39,7 +39,7 @@ export default function View2Matriz({ cuido }) {
       </div>
 
       <div style={{ padding: '6px var(--pad-screen) 140px', display: 'flex', flexDirection: 'column', gap: 16 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6,1fr)', gap: 6 }}>
+        <div className="cuido-hourgrid">
           {hourCells.map((cell) => (
             <button
               key={cell.hour}
@@ -54,7 +54,7 @@ export default function View2Matriz({ cuido }) {
                 justifyContent: 'center',
                 textAlign: 'center',
                 font: 'var(--type-label)',
-                fontSize: 9,
+                fontSize: 'clamp(9px, 1.6vw, 12px)',
                 lineHeight: 1.3,
                 background: cell.background,
                 color: cell.color,

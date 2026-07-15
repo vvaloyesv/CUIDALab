@@ -57,7 +57,7 @@ export default function View1Registro({ cuido }) {
             Cuéntanos cuántas horas dedicas, en un día típico, a cada una de estas actividades. Al final verás tus horas totales y su valor económico estimado.
           </p>
         </div>
-        <div style={{ position: 'relative', width: '100%', height: 190, borderRadius: 'var(--radius-xl)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
+        <div style={{ position: 'relative', width: '100%', aspectRatio: '2.9', borderRadius: 'var(--radius-xl)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
           <img src="/banner-mujeres-cuidando.webp" alt="Mujeres cuidando" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
         </div>
       </div>
@@ -79,16 +79,18 @@ export default function View1Registro({ cuido }) {
 
         <span style={{ font: 'var(--type-label)', color: 'var(--text-strong)', marginTop: 8 }}>En un día típico, ¿cuánto tiempo dedicas a…</span>
 
-        {CARE_CATEGORIES.map((cat) => (
-          <CategoryRow
-            key={cat.key}
-            cat={cat}
-            value={state.hours[cat.key] || 0}
-            onChange={(e) => setHour(cat.key, Number(e.target.value))}
-            onDecrement={() => stepHour(cat.key, cat.max, -1)}
-            onIncrement={() => stepHour(cat.key, cat.max, 1)}
-          />
-        ))}
+        <div className="cuido-category-grid">
+          {CARE_CATEGORIES.map((cat) => (
+            <CategoryRow
+              key={cat.key}
+              cat={cat}
+              value={state.hours[cat.key] || 0}
+              onChange={(e) => setHour(cat.key, Number(e.target.value))}
+              onDecrement={() => stepHour(cat.key, cat.max, -1)}
+              onIncrement={() => stepHour(cat.key, cat.max, 1)}
+            />
+          ))}
+        </div>
 
         <div style={{ height: 1, background: 'var(--border-subtle)', margin: '8px 0' }} />
         <span style={{ font: 'var(--type-label)', color: 'var(--text-strong)' }}>Aparte, tu trabajo o negocio</span>
