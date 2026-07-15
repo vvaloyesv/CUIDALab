@@ -88,7 +88,7 @@ export default function View3Dashboard({ cuido }) {
       </div>
 
       <div style={{ background: 'var(--surface-page)' }}>
-      <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--grad-dusk)', padding: '44px 22px 30px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--grad-dusk)', padding: '44px var(--pad-screen) 30px', display: 'flex', flexDirection: 'column', gap: 10 }}>
         <span style={{ position: 'absolute', top: -36, left: -30, width: 140, height: 140, borderRadius: '50%', background: 'var(--lime-300)', opacity: 0.4, filter: 'blur(8px)', pointerEvents: 'none' }} />
         <span style={{ position: 'relative', font: 'var(--type-eyebrow)', textTransform: 'uppercase', letterSpacing: 'var(--tracking-wider)', color: 'var(--ink-600)' }}>Resultados de {state.name}</span>
         <h1 style={{ position: 'relative', font: 'var(--type-h1)', fontSize: 'var(--text-3xl)', letterSpacing: 'var(--tracking-tight)', color: 'var(--ink-800)', margin: 0 }}>Hoy dedicaste</h1>
@@ -99,7 +99,7 @@ export default function View3Dashboard({ cuido }) {
         </div>
       </div>
 
-      <div style={{ padding: '16px 22px 120px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <div style={{ padding: '16px var(--pad-screen) 120px', display: 'flex', flexDirection: 'column', gap: 16 }}>
 
         <Card padding="md">
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -195,7 +195,7 @@ export default function View3Dashboard({ cuido }) {
       </div>
       </div>
 
-      <div style={{ padding: '0 22px 120px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+      <div style={{ padding: '0 var(--pad-screen) 120px', display: 'flex', flexDirection: 'column', gap: 8 }}>
         <Button
           variant="secondary"
           fullWidth

@@ -91,10 +91,10 @@
   --text-lg:  1.125rem;
   --text-xl:  1.375rem;
   --text-2xl: 1.75rem;
-  --text-3xl: 2.25rem;
-  --text-4xl: 3rem;
-  --text-5xl: 4rem;
-  --text-6xl: 5.5rem;
+  --text-3xl: clamp(1.75rem, 1.6rem + 0.8vw, 2.25rem);
+  --text-4xl: clamp(2.25rem, 2rem + 1.2vw, 3rem);
+  --text-5xl: clamp(2.75rem, 2.4rem + 1.6vw, 4rem);
+  --text-6xl: clamp(3.25rem, 2.6rem + 2.8vw, 5.5rem);
 
   --weight-light:    300;
   --weight-regular:  400;
@@ -145,7 +145,12 @@
   --gap-inline:  var(--space-2);
   --gap-stack:   var(--space-4);
   --pad-card:    var(--space-6);
-  --pad-screen:  var(--space-5);
+  --pad-screen:  clamp(1rem, 0.6rem + 3vw, 1.375rem);
+
+  /* ---- Tamaños fluidos (mismo elemento, distinto tamaño mobile/desktop) ---- */
+  --size-badge-icon:    clamp(1.875rem, 1.5rem + 1.5vw, 2.5rem);   /* 30px -> 40px: badge circular de categoría */
+  --size-badge-icon-lg: clamp(2.75rem, 2.2rem + 2.2vw, 3.5rem);    /* 44px -> 56px: badge de actividad activa */
+  --size-stepbtn:       clamp(1.625rem, 1.3rem + 1.2vw, 2rem);     /* 26px -> 32px: botones +/- de hora */
 
   /* ---- Radios ---- */
   --radius-xs:   6px;
@@ -219,3 +224,12 @@ button { font-family: inherit; }
 ::selection { background: var(--lime-300); color: var(--ink-800); }
 
 :focus-visible { outline: none; box-shadow: var(--ring-focus); }
+
+/* Phones muy angostos (SE, Android de gama baja): apretar aún más el espaciado y la tipografía grande */
+@media (max-width: 380px) {
+  :root {
+    --pad-screen: 0.875rem;
+    --text-3xl: 1.625rem;
+    --text-4xl: 2rem;
+  }
+}

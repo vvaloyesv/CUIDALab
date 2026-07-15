@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', justifyContent: 'center', background: 'var(--ink-150)' }}>
-      <div style={{ width: '100%', maxWidth: 560, minHeight: '100vh', background: 'var(--surface-page)', boxShadow: 'var(--shadow-md)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+      <div className="cuido-shell" style={{ minHeight: '100vh', background: 'var(--surface-page)', boxShadow: 'var(--shadow-md)', position: 'relative', display: 'flex', flexDirection: 'column' }}>
         {view === 'v1' && <View1Registro cuido={cuido} />}
         {view === 'v2' && <View2Matriz cuido={cuido} />}
         {view === 'v3' && <View3Dashboard cuido={cuido} />}

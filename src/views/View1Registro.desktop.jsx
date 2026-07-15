@@ -9,7 +9,7 @@ function CategoryCard({ cat, value, onChange, onDecrement, onIncrement }) {
   return (
     <div style={{ background: 'var(--surface-card)', borderRadius: 'var(--radius-card)', boxShadow: 'var(--shadow-sm)', padding: '22px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-        <span style={{ width: 40, height: 40, borderRadius: '50%', background: cat.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto', color: 'var(--ink-800)' }}>
+        <span style={{ width: 'var(--size-badge-icon)', height: 'var(--size-badge-icon)', borderRadius: '50%', background: cat.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto', color: 'var(--ink-800)' }}>
           <Icon n={cat.icon} s={19} />
         </span>
         <span style={{ font: 'var(--type-label)', fontSize: 'var(--text-md)', color: 'var(--ink-800)' }}>{cat.label}</span>
@@ -20,7 +20,7 @@ function CategoryCard({ cat, value, onChange, onDecrement, onIncrement }) {
         </p>
       )}
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <IconButton variant="outline" size="sm" label="Restar una hora" disabled={value <= 0} onClick={onDecrement} style={{ width: 32, height: 32 }}>
+        <IconButton variant="outline" size="sm" label="Restar una hora" disabled={value <= 0} onClick={onDecrement} style={{ width: 'var(--size-stepbtn)', height: 'var(--size-stepbtn)' }}>
           <Icon n="Minus" s={15} />
         </IconButton>
         <div style={{ flex: 1 }}>
@@ -34,7 +34,7 @@ function CategoryCard({ cat, value, onChange, onDecrement, onIncrement }) {
             onChange={onChange}
           />
         </div>
-        <IconButton variant="outline" size="sm" label="Sumar una hora" disabled={value >= cat.max} onClick={onIncrement} style={{ width: 32, height: 32 }}>
+        <IconButton variant="outline" size="sm" label="Sumar una hora" disabled={value >= cat.max} onClick={onIncrement} style={{ width: 'var(--size-stepbtn)', height: 'var(--size-stepbtn)' }}>
           <Icon n="Plus" s={15} />
         </IconButton>
       </div>

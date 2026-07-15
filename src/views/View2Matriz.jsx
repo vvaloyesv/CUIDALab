@@ -12,7 +12,7 @@ export default function View2Matriz({ cuido }) {
 
   return (
     <>
-      <div style={{ padding: '44px 22px 8px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div style={{ padding: '44px var(--pad-screen) 8px', display: 'flex', flexDirection: 'column', gap: 10 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <button
             onClick={cuido.backToV1}
@@ -25,7 +25,7 @@ export default function View2Matriz({ cuido }) {
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 4 }}>
-          <span style={{ width: 44, height: 44, borderRadius: '50%', background: current.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto', color: 'var(--ink-800)' }}>
+          <span style={{ width: 'var(--size-badge-icon-lg)', height: 'var(--size-badge-icon-lg)', borderRadius: '50%', background: current.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto', color: 'var(--ink-800)' }}>
             <Icon n={current.icon} s={21} />
           </span>
           <div>
@@ -38,7 +38,7 @@ export default function View2Matriz({ cuido }) {
         </p>
       </div>
 
-      <div style={{ padding: '6px 22px 140px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <div style={{ padding: '6px var(--pad-screen) 140px', display: 'flex', flexDirection: 'column', gap: 16 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6,1fr)', gap: 6 }}>
           {hourCells.map((cell) => (
             <button
@@ -87,7 +87,7 @@ export default function View2Matriz({ cuido }) {
         </div>
       </div>
 
-      <div style={{ position: 'sticky', bottom: 0, padding: '16px 22px 22px', background: 'linear-gradient(to top, var(--surface-page) 70%, transparent)', display: 'flex', gap: 10 }}>
+      <div style={{ position: 'sticky', bottom: 0, padding: '16px var(--pad-screen) 22px', background: 'linear-gradient(to top, var(--surface-page) 70%, transparent)', display: 'flex', gap: 10 }}>
         {state.activeIndex > 0 && (
           <Button variant="outline" size="lg" onClick={goPrev} style={{ width: 90 }}>Atrás</Button>
         )}

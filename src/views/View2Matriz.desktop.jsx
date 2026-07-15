@@ -26,7 +26,7 @@ export default function View2MatrizDesktop({ cuido }) {
           </span>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <span style={{ width: 56, height: 56, borderRadius: '50%', background: current.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto', color: 'var(--ink-800)' }}>
+            <span style={{ width: 'var(--size-badge-icon-lg)', height: 'var(--size-badge-icon-lg)', borderRadius: '50%', background: current.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto', color: 'var(--ink-800)' }}>
               <Icon n={current.icon} s={26} />
             </span>
             <div>

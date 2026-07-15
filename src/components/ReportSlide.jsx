@@ -48,7 +48,7 @@ function StatCard({ icon, iconBg, label, value }) {
         <Icon n={icon} s={20} color="var(--ink-800)" />
       </span>
       <div style={{ minWidth: 0 }}>
-        <div style={{ fontWeight: 600, fontSize: 11.5, lineHeight: 1.3, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--ink-600)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{label}</div>
+        <div style={{ fontWeight: 600, fontSize: 10.5, lineHeight: 1.3, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--ink-600)' }}>{label}</div>
         <div style={{ fontWeight: 700, fontSize: 28, letterSpacing: '-0.02em', color: 'var(--ink-800)', marginTop: 8, whiteSpace: 'nowrap' }}>{value}</div>
       </div>
     </div>

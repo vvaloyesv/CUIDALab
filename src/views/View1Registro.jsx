@@ -9,7 +9,7 @@ function CategoryRow({ cat, value, onChange, onDecrement, onIncrement }) {
   return (
     <div style={{ background: 'var(--surface-card)', borderRadius: 'var(--radius-card)', boxShadow: 'var(--shadow-sm)', padding: '16px 18px', display: 'flex', flexDirection: 'column', gap: 10 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <span style={{ width: 30, height: 30, borderRadius: '50%', background: cat.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto', color: 'var(--ink-800)' }}>
+        <span style={{ width: 'var(--size-badge-icon)', height: 'var(--size-badge-icon)', borderRadius: '50%', background: cat.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '0 0 auto', color: 'var(--ink-800)' }}>
           <Icon n={cat.icon} s={15} />
         </span>
         <span style={{ font: 'var(--type-label)', fontSize: 'var(--text-sm)', color: 'var(--ink-800)' }}>{cat.label}</span>
@@ -20,7 +20,7 @@ function CategoryRow({ cat, value, onChange, onDecrement, onIncrement }) {
         </p>
       )}
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <IconButton variant="outline" size="sm" label="Restar una hora" disabled={value <= 0} onClick={onDecrement} style={{ width: 26, height: 26 }}>
+        <IconButton variant="outline" size="sm" label="Restar una hora" disabled={value <= 0} onClick={onDecrement} style={{ width: 'var(--size-stepbtn)', height: 'var(--size-stepbtn)' }}>
           <Icon n="Minus" s={13} />
         </IconButton>
         <div style={{ flex: 1 }}>
@@ -34,7 +34,7 @@ function CategoryRow({ cat, value, onChange, onDecrement, onIncrement }) {
             onChange={onChange}
           />
         </div>
-        <IconButton variant="outline" size="sm" label="Sumar una hora" disabled={value >= cat.max} onClick={onIncrement} style={{ width: 26, height: 26 }}>
+        <IconButton variant="outline" size="sm" label="Sumar una hora" disabled={value >= cat.max} onClick={onIncrement} style={{ width: 'var(--size-stepbtn)', height: 'var(--size-stepbtn)' }}>
           <Icon n="Plus" s={13} />
         </IconButton>
       </div>
@@ -47,7 +47,7 @@ export default function View1Registro({ cuido }) {
 
   return (
     <>
-      <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--grad-warm)', padding: '44px 22px 26px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+      <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--grad-warm)', padding: '44px var(--pad-screen) 26px', display: 'flex', flexDirection: 'column', gap: 14 }}>
         <span style={{ position: 'absolute', top: -40, right: -30, width: 150, height: 150, borderRadius: '50%', background: 'var(--mint)', opacity: 0.55, filter: 'blur(6px)', pointerEvents: 'none' }} />
         <span style={{ position: 'absolute', bottom: -50, left: -40, width: 130, height: 130, borderRadius: '50%', background: 'var(--lavender-strong)', opacity: 0.35, filter: 'blur(10px)', pointerEvents: 'none' }} />
         <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: 6 }}>
@@ -62,7 +62,7 @@ export default function View1Registro({ cuido }) {
         </div>
       </div>
 
-      <div style={{ padding: '20px 22px 140px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <div style={{ padding: '20px var(--pad-screen) 140px', display: 'flex', flexDirection: 'column', gap: 16 }}>
         <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', background: 'var(--surface-sunken)', borderRadius: 'var(--radius-card)', padding: '14px 16px' }}>
           <Icon n="Info" s={18} />
           <p style={{ font: 'var(--type-body-sm)', fontSize: 'var(--text-xs)', color: 'var(--text-muted)', margin: 0 }}>
@@ -104,7 +104,7 @@ export default function View1Registro({ cuido }) {
         />
       </div>
 
-      <div style={{ position: 'sticky', bottom: 0, padding: '16px 22px 22px', background: 'linear-gradient(to top, var(--surface-page) 70%, transparent)', display: 'flex', flexDirection: 'column', gap: 8 }}>
+      <div style={{ position: 'sticky', bottom: 0, padding: '16px var(--pad-screen) 22px', background: 'linear-gradient(to top, var(--surface-page) 70%, transparent)', display: 'flex', flexDirection: 'column', gap: 8 }}>
         {v1Disabled && (
           <span style={{ font: 'var(--type-body-sm)', fontSize: 'var(--text-xs)', color: 'var(--text-muted)', textAlign: 'center' }}>
             {nameMissing ? 'Escribe tu nombre para continuar.' : 'Registra al menos una actividad con horas mayores a cero.'}
